@@ -1,11 +1,7 @@
 
-export default function Home() {
+export default function About() {
     return (
         <div>
-            <p className="text-lg">
-                Hey there!
-            </p>
-            <br />
             <p>
                 I&apos;m Mehul Sinha, a software developer specializing in building exceptional digital experiences.
             </p>
@@ -13,6 +9,10 @@ export default function Home() {
             <p>
                 Welcome to my portfolio!
             </p>
+            <br />
+            <br />
+
         </div>
     );
 }
+
