@@ -1,10 +1,6 @@
-'use client';
+import { useEffect, useRef } from 'react'
 
-import { useEffect, useRef, useLayoutEffect } from 'react'
-
-const useIsomorphicLayoutEffect =
-    typeof window !== 'undefined' ? useLayoutEffect : useEffect
-
+import { useIsomorphicLayoutEffect } from '@/hooks/use-isomorphic-layout-effect'
 
 export default function useInterval(callback: () => void, delay: number | null) {
     const savedCallback = useRef(callback)

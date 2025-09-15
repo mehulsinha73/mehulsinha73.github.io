@@ -1,10 +1,12 @@
+import { AnimateStagger } from '@/components/animations/animate-stagger'
+import { AnimateUpIntoView } from '@/components/animations/animate-up-into-view'
 import SnakeGame from '@/components/layout/snake'
 
 export default function NotFound() {
 
     return (
-        <div className="">
-            <div className="flex flex-col items-center justify-between">
+        <AnimateStagger>
+            <AnimateUpIntoView className="flex flex-col items-center justify-between">
                 <p className="text-2xl md:text-3xl">
                     404 - Page Not Found
                 </p>
@@ -13,8 +15,10 @@ export default function NotFound() {
                     <br />
                     Or maybe you have found a secret level? Try to get a high score!
                 </p>
-            </div>
-            <SnakeGame />
-        </div>
+            </AnimateUpIntoView>
+            <AnimateUpIntoView>
+                <SnakeGame />
+            </AnimateUpIntoView>
+        </AnimateStagger>
     )
 }

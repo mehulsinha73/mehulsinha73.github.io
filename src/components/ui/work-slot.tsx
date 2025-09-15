@@ -20,38 +20,39 @@ type WorkSlotProps = MotionDivProps & {
 function WorkSlot(props: WorkSlotProps) {
     const {
         workSlotData,
-        ...restProps
     } = props;
 
     return (
-        <AnimateUpIntoView className="hover:bg-sidebar p-2.5 rounded-md" {...restProps}>
-            <div className="flex flex-row gap-2 justify-between items-center">
-                <div className="flex flex-row items-center gap-2">
-                    <Image
-                        src={workSlotData.icon}
-                        alt={workSlotData.company + " logo"}
-                        width={60}
-                        height={60}
-                        className="aspect-square object-contain transition-all duration-400 rounded text-xs"
-                        draggable={false}
-                    />
-                    <div className="flex flex-col justify-between items-start">
-                        <p>
-                            {workSlotData.company}
-                        </p>
-                        <p className="text-muted-foreground text-sm">
-                            {workSlotData.position}
-                        </p>
+        <AnimateUpIntoView>
+            <div className="flex flex-col gap-2 p-2.5">
+                <div className="flex flex-row gap-2 justify-between items-center">
+                    <div className="flex flex-row items-center gap-2">
+                        <Image
+                            src={workSlotData.icon}
+                            alt={workSlotData.company + " logo"}
+                            width={60}
+                            height={60}
+                            className="aspect-square object-contain rounded text-xs"
+                            draggable={false}
+                        />
+                        <div className="flex flex-col justify-between items-start">
+                            <p>
+                                {workSlotData.company}
+                            </p>
+                            <p className="text-muted-foreground text-sm">
+                                {workSlotData.position}
+                            </p>
+                        </div>
                     </div>
+                    <p className="flex justify-between items-end">
+                        {workSlotData.timeframe}
+                    </p>
                 </div>
-                <p className="flex justify-between items-end">
-                    {workSlotData.timeframe}
-                </p>
-            </div>
-            <div>
-                <p className="text-sm text-muted-foreground mt-2">
-                    {workSlotData.description}
-                </p>
+                <div>
+                    <p className="text-muted-foreground text-sm mt-3">
+                        {workSlotData.description}
+                    </p>
+                </div>
             </div>
         </AnimateUpIntoView>
     );

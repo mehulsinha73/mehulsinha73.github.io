@@ -2,68 +2,46 @@
 
 import { useTheme } from "next-themes";
 import { Button } from "@/components/ui/button";
-import { useEffect, useState } from "react";
 import { SunIcon } from "@/components/icons/sun";
 import { MoonIcon } from "@/components/icons/moon";
 import { MonitorCheckIcon } from "@/components/icons/monitor-check";
+import { AnimatedBackground } from "@/components/animations/animated-background";
 
 export function ThemeToggle() {
-    const [mounted, setMounted] = useState(false)
+    const { theme, setTheme } = useTheme();
 
-    useEffect(() => {
-        setMounted(true)
-    }, [])
+    const themeOptions = [
+        { value: "light", icon: <SunIcon /> },
+        { value: "dark", icon: <MoonIcon /> },
+        { value: "system", icon: <MonitorCheckIcon /> },
+    ]
 
     return (
         <div className="flex gap-x-0.5 items-center">
-            <MountedButton
-                themeValue="light"
-                mounted={mounted}
-                icon={<SunIcon />}
-            />
-            <MountedButton
-                themeValue="dark"
-                mounted={mounted}
-                icon={<MoonIcon />}
-            />
-            <MountedButton
-                themeValue="system"
-                mounted={mounted}
-                icon={<MonitorCheckIcon />}
-            />
+            <AnimatedBackground
+                defaultValue={theme}
+                className='rounded-lg bg-muted'
+                transition={{
+                    type: 'spring',
+                    bounce: 0.2,
+                    duration: 0.3,
+                }}
+                onValueChange={(id) => {
+                    setTheme(id as string)
+                }}
+            >
+                {themeOptions.map((theme) => (
+                    <Button
+                        key={theme.value}
+                        variant="ghost"
+                        size="icon"
+                        data-id={theme.value}
+                        aria-label={`Switch to ${theme.value} theme`}
+                    >
+                        {theme.icon}
+                    </Button>
+                ))}
+            </AnimatedBackground>
         </div>
     )
-}
-
-function MountedButton({ themeValue, mounted, icon }: {
-    themeValue: "light" | "dark" | "system";
-    mounted: boolean;
-    icon: React.ReactNode;
-}) {
-    const { theme, setTheme } = useTheme();
-
-    if (!mounted) {
-        return (
-            <Button
-                variant="ghost"
-                size="icon"
-                asChild
-                onClick={() => setTheme(themeValue)}
-            >
-                {icon}
-            </Button>
-        );
-    }
-
-    return (
-        <Button
-            variant="ghost"
-            size="icon"
-            asChild
-            onClick={() => setTheme(themeValue)}
-            className={theme === themeValue ? "bg-muted" : ""}
-        >
-            {icon}
-        </Button>
-    );
 }

@@ -19,19 +19,18 @@ type EducationSlotProps = MotionDivProps & {
 function EducationSlot(props: EducationSlotProps) {
     const {
         educationSlotData,
-        ...restProps
     } = props;
 
     return (
-        <AnimateUpIntoView className="hover:bg-sidebar p-2.5 rounded-md" {...restProps}>
-            <div className="flex flex-row gap-2 justify-between items-center">
+        <AnimateUpIntoView>
+            <div className="flex flex-row gap-2 justify-between items-center p-2.5">
                 <div className="flex flex-row items-center gap-2">
                     <Image
                         src={educationSlotData.icon}
                         alt={educationSlotData.college + " logo"}
                         width={60}
                         height={60}
-                        className="aspect-square object-contain transition-all duration-400 rounded text-xs"
+                        className="aspect-square object-contain rounded text-xs"
                         draggable={false}
                     />
                     <div className="flex flex-col justify-between items-start">

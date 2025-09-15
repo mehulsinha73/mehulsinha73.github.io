@@ -1,24 +1,17 @@
-import { SwapCardData } from "@/components/ui/swap-card";
+import { ProjectCardData } from "@/components/ui/project-card";
 
-
-export const projectsData: SwapCardData[] = [
+export const projectData: ProjectCardData[] = [
     {
-        id: "1",
-        title: "SHSF Dashboard Application",
-        excerpt:
-            "Modern, responsive dashboard application built with React and Next.js. Features include real-time analytics, user management, and customizable widgets.",
-        createdAt: "March 18, 2025",
-        domain: "shsf-dashboard.dev",
-        actionLabel: "View product",
-        slug: "shsf-dashboard",
-        alt: [
-            "SHSF Dashboard dark mode interface showing analytics charts",
-            "SHSF Dashboard light mode interface showing user management panel",
-            "SHSF Dashboard light mode interface showing user management panel",
-            "SHSF Dashboard light mode interface showing user management panel",
-            "SHSF Dashboard light mode interface showing user management panel",
-
+        id: "4",
+        title: "My Portfolio",
+        subtitle: "Yes! This very one!",
+        excerpt: [
+            "Little is known about the life of Édouard-Wilfrid Buquet. He was born in France in 1866, but the time and place of his death is unfortunately a mystery.",
+            "Research conducted in the 1970s revealed that he’d designed the “EB 27” double-arm desk lamp in 1925, handcrafting it from nickel-plated brass, aluminium and varnished wood."
         ],
+        createdAt: "March 18, 2025",
+        url: "",
+        urlLabel: "View Github",
         techStack: [
             "React",
             "Next.js",
@@ -26,32 +19,20 @@ export const projectsData: SwapCardData[] = [
             "Tailwind CSS",
             "Framer Motion",
         ],
-        thumbnail: [
-            "https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=640&h=360&auto=format&fit=crop",
-            "https://images.unsplash.com/photo-1467232004584-a241de8bcf5d?q=80&w=640&h=360&auto=format&fit=crop",
-            "https://images.unsplash.com/photo-1581287053822-fd7bf4f4bfec?q=80&w=640&h=360&auto=format&fit=crop",
-            "https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=640&h=360&auto=format&fit=crop",
-            "https://images.unsplash.com/photo-1572177191856-3cde618dee1f?q=80&w=640&h=360&auto=format&fit=crop"
-
-        ],
+        thumbnail: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=640&h=360&auto=format&fit=crop",
+        thumbnailAlt: "SHSF Dashboard dark mode interface showing analytics charts"
     },
     {
-        id: "2",
-        title: "SHSF Dashboard Application",
-        excerpt:
-            "Modern, responsive dashboard application built with React and Next.js. Features include real-time analytics, user management, and customizable widgets.",
-        createdAt: "March 18, 2025",
-        domain: "shsf-dashboard.dev",
-        actionLabel: "View product",
-        slug: "shsf-dashbsoard",
-        alt: [
-            "SHSF Dashboard dark mode interface showing analytics charts",
-            "SHSF Dashboard light mode interface showing user management panel",
-            "SHSF Dashboard light mode interface showing user management panel",
-            "SHSF Dashboard light mode interface showing user management panel",
-            "SHSF Dashboard light mode interface showing user management panel",
-
+        id: "3",
+        title: "My Portfolio",
+        subtitle: "Yes! This one",
+        excerpt: [
+            "Little is known about the life of Édouard-Wilfrid Buquet. He was born in France in 1866, but the time and place of his death is unfortunately a mystery.",
+            "Research conducted in the 1970s revealed that he’d designed the “EB 27” double-arm desk lamp in 1925, handcrafting it from nickel-plated brass, aluminium and varnished wood."
         ],
+        createdAt: "March 18, 2025",
+        url: "",
+        urlLabel: "View Github",
         techStack: [
             "React",
             "Next.js",
@@ -59,13 +40,7 @@ export const projectsData: SwapCardData[] = [
             "Tailwind CSS",
             "Framer Motion",
         ],
-        thumbnail: [
-            "https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=640&h=360&auto=format&fit=crop",
-            "https://images.unsplash.com/photo-1467232004584-a241de8bcf5d?q=80&w=640&h=360&auto=format&fit=crop",
-            "https://images.unsplash.com/photo-1581287053822-fd7bf4f4bfec?q=80&w=640&h=360&auto=format&fit=crop",
-            "https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=640&h=360&auto=format&fit=crop",
-            "https://images.unsplash.com/photo-1572177191856-3cde618dee1f?q=80&w=640&h=360&auto=format&fit=crop"
-
-        ],
-    },
-];
+        thumbnail: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=640&h=360&auto=format&fit=crop",
+        thumbnailAlt: "SHSF Dashboard dark mode interface showing analytics charts"
+    }
+]

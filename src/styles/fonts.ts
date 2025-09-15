@@ -21,4 +21,5 @@ export const syncopate = Syncopate({
 export const kodeMono = Kode_Mono({
     variable: "--font-kode-mono",
     subsets: ["latin"],
-    weight: ["400"]});
+    weight: ["400"]
+});

@@ -3,26 +3,27 @@
 import * as React from "react"
 import { motion, MotionProps } from "framer-motion"
 import { cn } from "@/lib/utils"
-import { TRANSITION_SECTION, VARIANTS_SECTION } from "@/components/animations/constants";
+import { VARIANTS_CONTAINER } from "@/components/animations/constants";
 
 type MotionDivProps = React.HTMLAttributes<HTMLDivElement> & MotionProps;
 
-const AnimateUpIntoView = React.forwardRef<HTMLDivElement, MotionDivProps>(
+const AnimateStagger = React.forwardRef<HTMLDivElement, MotionDivProps>(
     ({ children, className, ...props }, ref) => {
         return (
-            <motion.div
+            <motion.section
                 ref={ref}
                 className={cn(className)}
-                variants={VARIANTS_SECTION}
-                transition={TRANSITION_SECTION}
+                variants={VARIANTS_CONTAINER}
+                initial="hidden"
+                animate="visible"
                 {...props}
             >
                 {children}
-            </motion.div>
+            </motion.section>
         );
     }
 );
 
-AnimateUpIntoView.displayName = "AnimateUpIntoView";
+AnimateStagger.displayName = "AnimateStagger";
 
-export { AnimateUpIntoView, type MotionDivProps };
+export { AnimateStagger, type MotionDivProps };

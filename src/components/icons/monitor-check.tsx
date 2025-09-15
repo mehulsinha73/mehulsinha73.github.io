@@ -1,10 +1,10 @@
-'use client';
+"use client";
 
-import { motion, useAnimation } from 'framer-motion';
-import type { Variants } from 'framer-motion';
-import type { HTMLAttributes } from 'react';
-import { forwardRef, useCallback, useImperativeHandle, useRef } from 'react';
-import { cn } from '@/lib/utils';
+import { motion, useAnimation } from "framer-motion";
+import type { Variants } from "framer-motion";
+import type { HTMLAttributes } from "react";
+import { forwardRef, useCallback, useImperativeHandle, useRef } from "react";
+import { cn } from "@/lib/utils";
 
 export interface MonitorCheckIconHandle {
     startAnimation: () => void;
@@ -27,8 +27,8 @@ const checkVariants: Variants = {
         pathLength: [0, 1],
         opacity: [0, 1],
         transition: {
-            pathLength: { duration: 0.4, ease: 'easeInOut' },
-            opacity: { duration: 0.4, ease: 'easeInOut' },
+            pathLength: { duration: 0.4, ease: "easeInOut" },
+            opacity: { duration: 0.4, ease: "easeInOut" },
         },
     },
 };
@@ -44,15 +44,15 @@ const MonitorCheckIcon = forwardRef<
         isControlledRef.current = true;
 
         return {
-            startAnimation: () => controls.start('animate'),
-            stopAnimation: () => controls.start('normal'),
+            startAnimation: () => controls.start("animate"),
+            stopAnimation: () => controls.start("normal"),
         };
     });
 
     const handleMouseEnter = useCallback(
         (e: React.MouseEvent<HTMLDivElement>) => {
             if (!isControlledRef.current) {
-                controls.start('animate');
+                controls.start("animate");
             } else {
                 onMouseEnter?.(e);
             }
@@ -63,7 +63,7 @@ const MonitorCheckIcon = forwardRef<
     const handleMouseLeave = useCallback(
         (e: React.MouseEvent<HTMLDivElement>) => {
             if (!isControlledRef.current) {
-                controls.start('normal');
+                controls.start("normal");
             } else {
                 onMouseLeave?.(e);
             }
@@ -97,13 +97,13 @@ const MonitorCheckIcon = forwardRef<
                     initial="normal"
                     variants={checkVariants}
                     d="m9 10 2 2 4-4"
-                    style={{ transformOrigin: 'center' }}
+                    style={{ transformOrigin: "center" }}
                 />
             </svg>
         </div>
     );
 });
 
-MonitorCheckIcon.displayName = 'MonitorCheckIcon';
+MonitorCheckIcon.displayName = "MonitorCheckIcon";
 
 export { MonitorCheckIcon };

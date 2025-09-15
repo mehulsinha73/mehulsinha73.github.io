@@ -4,11 +4,23 @@ import { ThemeProvider } from "@/components/theme/theme-provider";
 import Header from "@/components/layout/header";
 import Footer from "@/components/layout/footer";
 import { luxuriousRoman } from "@/styles/fonts";
-import { cn } from "@/lib/utils";
+import { cn, getSiteUrl } from "@/lib/utils";
 
 export const metadata: Metadata = {
     title: "Mehul Sinha",
+    applicationName: "Mehul Sinha",
     description: "Mehul Sinha's Portfolio",
+    metadataBase: new URL(getSiteUrl()),
+    keywords: ["Mehul Sinha", "Porfolio", "Resume", "Software Developer", "Software Engineer"],
+    creator: "Mehul Sinha",
+    robots: {
+        index: true,
+        follow: true,
+        "max-image-preview": "large",
+        "max-snippet": -1,
+        "max-video-preview": -1,
+        googleBot: "index, follow"
+    },
 };
 
 export default function RootLayout({
