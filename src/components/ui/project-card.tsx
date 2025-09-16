@@ -64,10 +64,10 @@ export function ProjectCard(data: ProjectCardData) {
                                 'rounded-lg hover:border border-muted-foreground text-muted-foreground')} />
                     </div>
                 </MorphingDialogTrigger>
-                <MorphingDialogContainer className={luxuriousRoman.className}>
+                <MorphingDialogContainer>
                     <MorphingDialogContent
                         className={cn('pointer-events-auto relative rounded-xl flex h-auto w-full flex-col',
-                            'overflow-hidden border bg-sidebar sm:w-[500px]')}>
+                            'overflow-hidden border bg-sidebar sm:w-[500px]', luxuriousRoman.className)}>
                         <MorphingDialogImage
                             src={data.thumbnail}
                             alt={data.thumbnailAlt}
