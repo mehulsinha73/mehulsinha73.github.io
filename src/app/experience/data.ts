@@ -30,13 +30,6 @@ export const workSlotData: WorkSlotData[] = [
 
 export const educationSlotData: EducationSlotData[] = [
     {
-        id: "2",
-        icon: "/logo/usc.png",
-        college: "University of Southern California",
-        degree: "Master of Science in Computer Science",
-        timeframe: "2026 - 2028",
-    },
-    {
         id: "1",
         icon: "/logo/manipal.png",
         college: "Manipal University",

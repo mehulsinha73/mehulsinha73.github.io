@@ -3,7 +3,7 @@ import { AnimateStagger } from "@/components/animations/animate-stagger";
 export default function Home() {
     return (
         <AnimateStagger>
-            <p className="text-lg">
+            <p className="text-lg pt-30">
                 Hey there!
             </p>
             <br />

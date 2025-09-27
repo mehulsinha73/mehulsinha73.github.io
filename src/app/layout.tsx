@@ -3,15 +3,18 @@ import "@/styles/globals.css";
 import { ThemeProvider } from "@/components/theme/theme-provider";
 import Header from "@/components/layout/header";
 import Footer from "@/components/layout/footer";
-import { luxuriousRoman } from "@/styles/fonts";
+import { ibmPlexMono } from "@/styles/fonts";
 import { cn, getSiteUrl } from "@/lib/utils";
 
 export const metadata: Metadata = {
-    title: "Mehul Sinha",
+    title: {
+        template: '%s | Mehul Sinha',
+        default: 'Mehul Sinha',
+    },
     applicationName: "Mehul Sinha",
     description: "Mehul Sinha's Portfolio",
     metadataBase: new URL(getSiteUrl()),
-    keywords: ["Mehul Sinha", "Porfolio", "Resume", "Software Developer", "Software Engineer"],
+    keywords: ["Mehul Sinha", "Porfolio", "Software Developer", "Software Engineer", "AI"],
     creator: "Mehul Sinha",
     robots: {
         index: true,
@@ -42,7 +45,7 @@ export default function RootLayout({
                         <main
                             className={cn(
                                 "flex-1 sm:py-10 mx-auto container items-center justify-between",
-                                luxuriousRoman.className
+                                ibmPlexMono.className
                             )}>
                             {children}
                         </main>

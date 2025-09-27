@@ -23,7 +23,7 @@ function EducationSlot(props: EducationSlotProps) {
 
     return (
         <AnimateUpIntoView>
-            <div className="flex flex-row gap-2 justify-between items-center p-2.5">
+            <div className="flex flex-row gap-2 justify-between items-center px-2.5 py-3">
                 <div className="flex flex-row items-center gap-2">
                     <Image
                         src={educationSlotData.icon}

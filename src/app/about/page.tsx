@@ -1,6 +1,11 @@
 import { AnimateStagger } from "@/components/animations/animate-stagger";
 import { AnimateUpIntoView } from "@/components/animations/animate-up-into-view"
 import Image from "next/image"
+import { Metadata } from "next";
+
+export const metadata: Metadata = {
+    title: "About"
+}
 
 export default function About() {
     return (

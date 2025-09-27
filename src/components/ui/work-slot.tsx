@@ -24,7 +24,7 @@ function WorkSlot(props: WorkSlotProps) {
 
     return (
         <AnimateUpIntoView>
-            <div className="flex flex-col gap-2 p-2.5">
+            <div className="flex flex-col gap-2 px-2.5 py-3">
                 <div className="flex flex-row gap-2 justify-between items-center">
                     <div className="flex flex-row items-center gap-2">
                         <Image
@@ -44,12 +44,12 @@ function WorkSlot(props: WorkSlotProps) {
                             </p>
                         </div>
                     </div>
-                    <p className="flex justify-between items-end">
+                    <p className="flex justify-between items-end text-nowrap">
                         {workSlotData.timeframe}
                     </p>
                 </div>
                 <div>
-                    <p className="text-muted-foreground text-sm mt-3">
+                    <p className="text-muted-foreground text-sm mt-1">
                         {workSlotData.description}
                     </p>
                 </div>

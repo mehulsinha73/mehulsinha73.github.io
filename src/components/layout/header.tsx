@@ -1,5 +1,5 @@
 import { cn } from "@/lib/utils";
-import { babylonica, syncopate } from "@/styles/fonts";
+import { syncopate, almendra} from "@/styles/fonts";
 import Link from "next/link";
 import { AnimatedBackground } from "@/components/animations/animated-background";
 
@@ -12,8 +12,8 @@ export default function Header() {
 
     return (
         <header className="container mx-auto flex flex-col items-start justify-center sm:flex-row sm:items-center sm:justify-between h-40">
-            <Link href="/" className={cn("text-5xl text-nowrap", babylonica.className)}>
-                Mehul Sinha
+            <Link href="/" className={cn("text-5xl text-nowrap", almendra.className)}>
+                mehul sinha
             </Link>
             <nav className={cn("flex items-center mt-2 sm:mt-0", syncopate.className)}>
                 <AnimatedBackground

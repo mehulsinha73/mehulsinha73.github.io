@@ -12,7 +12,7 @@ import {
 import { PlusIcon } from 'lucide-react';
 import { AnimateUpIntoView } from '@/components/animations/animate-up-into-view';
 import Link from 'next/link';
-import { luxuriousRoman } from '@/styles/fonts';
+import { ibmPlexMono } from '@/styles/fonts';
 import { cn } from '@/lib/utils';
 import { ScrollArea, ScrollBar } from '@/components/ui/scroll-area';
 import { Badge } from '@/components/ui/badge';
@@ -54,7 +54,7 @@ export function ProjectCard(data: ProjectCardData) {
                             <MorphingDialogTitle className='text-start'>
                                 {data.title}
                             </MorphingDialogTitle>
-                            <MorphingDialogSubtitle className='text-start text-muted-foreground'>
+                            <MorphingDialogSubtitle className='text-start text-muted-foreground text-xs'>
                                 {data.subtitle}
                             </MorphingDialogSubtitle>
                         </div>
@@ -67,7 +67,7 @@ export function ProjectCard(data: ProjectCardData) {
                 <MorphingDialogContainer>
                     <MorphingDialogContent
                         className={cn('pointer-events-auto relative rounded-xl flex h-auto w-full flex-col',
-                            'overflow-hidden border bg-sidebar sm:w-[500px]', luxuriousRoman.className)}>
+                            'overflow-hidden border bg-sidebar sm:w-[500px]', ibmPlexMono.className)}>
                         <MorphingDialogImage
                             src={data.thumbnail}
                             alt={data.thumbnailAlt}
@@ -99,7 +99,7 @@ export function ProjectCard(data: ProjectCardData) {
                                         {data.techStack.map((tag, index) => (
                                             <Badge
                                                 key={index}
-                                                className="shrink-0 bg-muted-foreground hover:bg-muted-background"
+                                                className="shrink-0 bg-muted-foreground"
                                             >
                                                 {tag}
                                             </Badge>

@@ -237,12 +237,12 @@ function MorphingDialogContainer({ children, className }: MorphingDialogContaine
     if (!mounted) return null;
 
     return createPortal(
-        <AnimatePresence initial={false} mode="sync">
+        <AnimatePresence mode="wait">
             {isOpen && (
                 <>
                     <motion.div
                         key={`backdrop-${uniqueId}`}
-                        className="fixed inset-0 h-full w-full backdrop-blur-xs"
+                        className="fixed inset-0 h-full w-full bg-black/50 "
                         initial={{ opacity: 0 }}
                         animate={{ opacity: 1 }}
                         exit={{ opacity: 0 }}
