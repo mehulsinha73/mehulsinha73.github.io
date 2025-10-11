@@ -2,10 +2,8 @@
 
 import { useTheme } from "next-themes";
 import { Button } from "@/components/ui/button";
-import { SunIcon } from "@/components/icons/sun";
-import { MoonIcon } from "@/components/icons/moon";
-import { MonitorCheckIcon } from "@/components/icons/monitor-check";
-import { AnimatedBackground } from "@/components/animations/animated-background";
+import { SunIcon, MoonIcon, MonitorCheckIcon} from "@/components/icons";
+import { AnimatedBackground } from "@/components/animations";
 
 export function ThemeToggle() {
     const { theme, setTheme } = useTheme();

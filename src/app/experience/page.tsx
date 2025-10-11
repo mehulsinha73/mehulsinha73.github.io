@@ -1,9 +1,7 @@
 import { EducationSlot } from "@/components/ui/education-slot";
 import { educationSlotData, workSlotData } from "./data";
 import { WorkSlot } from "@/components/ui/work-slot";
-import { AnimatedBackground } from "@/components/animations/animated-background";
-import { AnimateStagger } from "@/components/animations/animate-stagger";
-import { AnimateUpIntoView } from "@/components/animations/animate-up-into-view";
+import { AnimatedBackground, AnimateStagger, AnimateUpIntoView } from "@/components/animations";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
@@ -14,9 +12,11 @@ export default function Experience() {
     return (
         <AnimateStagger>
             <AnimateUpIntoView>
-                <p className="text-xl pb-3 text-center hover:underline-offset-4 hover:underline">
-                    Work
-                </p>
+                <div className="pb-3 justify-center flex">
+                    <p className="text-xl hover:underline-offset-5 hover:underline">
+                        Work
+                    </p>
+                </div>
             </AnimateUpIntoView>
             <AnimatedBackground
                 enableHover
@@ -34,9 +34,11 @@ export default function Experience() {
                 )}
             </AnimatedBackground>
             <AnimateUpIntoView>
-                <p className="text-xl pb-3 text-center pt-7 hover:underline-offset-4 hover:underline">
-                    Education
-                </p>
+                <div className="pb-3 pt-7 justify-center flex">
+                    <p className="text-xl hover:underline-offset-5 hover:underline">
+                        Education
+                    </p>
+                </div>
             </AnimateUpIntoView>
             <AnimatedBackground
                 enableHover

@@ -25,4 +25,4 @@ const AnimateUpIntoView = React.forwardRef<HTMLDivElement, MotionDivProps>(
 
 AnimateUpIntoView.displayName = "AnimateUpIntoView";
 
-export { AnimateUpIntoView, type MotionDivProps };
+export { AnimateUpIntoView };

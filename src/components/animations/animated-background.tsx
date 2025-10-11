@@ -57,7 +57,7 @@ export function AnimatedBackground({
                 onMouseLeave: () => handleSetActiveId(null),
             }
             : {
-                onClick: () => {handleSetActiveId(id)},
+                onClick: () => { handleSetActiveId(id) },
             };
 
         return cloneElement(

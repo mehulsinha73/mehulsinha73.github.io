@@ -2,7 +2,7 @@
 
 import Image from "next/image";
 import React from "react";
-import { AnimateUpIntoView, MotionDivProps } from "@/components/animations/animate-up-into-view";
+import { AnimateUpIntoView } from "@/components/animations";
 
 type EducationSlotData = {
     id: string;
@@ -12,7 +12,7 @@ type EducationSlotData = {
     timeframe: string;
 };
 
-type EducationSlotProps = MotionDivProps & {
+type EducationSlotProps = {
     educationSlotData: EducationSlotData;
 };
 

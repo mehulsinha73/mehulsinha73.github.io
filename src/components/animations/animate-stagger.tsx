@@ -26,4 +26,4 @@ const AnimateStagger = React.forwardRef<HTMLDivElement, MotionDivProps>(
 
 AnimateStagger.displayName = "AnimateStagger";
 
-export { AnimateStagger, type MotionDivProps };
+export { AnimateStagger };

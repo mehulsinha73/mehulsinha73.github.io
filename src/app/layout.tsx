@@ -8,21 +8,25 @@ import { cn, getSiteUrl } from "@/lib/utils";
 
 export const metadata: Metadata = {
     title: {
-        template: '%s | Mehul Sinha',
+        template: '%s • Mehul Sinha',
         default: 'Mehul Sinha',
     },
     applicationName: "Mehul Sinha",
-    description: "Mehul Sinha's Portfolio",
+    description: "A Full-stack developer ",
     metadataBase: new URL(getSiteUrl()),
     keywords: ["Mehul Sinha", "Porfolio", "Software Developer", "Software Engineer", "AI"],
     creator: "Mehul Sinha",
-    robots: {
-        index: true,
-        follow: true,
-        "max-image-preview": "large",
-        "max-snippet": -1,
-        "max-video-preview": -1,
-        googleBot: "index, follow"
+    twitter: {
+        title: "Mehul Sinha",
+        card: "summary_large_image",
+    },
+    openGraph: {
+        title: "Mehul Sinha",
+        description: "A Full-stack developer ",
+        url: new URL(getSiteUrl()),
+        siteName: 'Mehul Sinha',
+        locale: 'en_US',
+        type: 'website',
     },
 };
 

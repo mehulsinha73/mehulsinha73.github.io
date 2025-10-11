@@ -19,7 +19,7 @@ export const projectData: ProjectCardData[] = [
             "Tailwind CSS",
             "Framer Motion",
         ],
-        thumbnail: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=640&h=360&auto=format&fit=crop",
+        thumbnail: "/projects-images/portfolio.png",
         thumbnailAlt: "My Portfolio Image"
     },
     {
@@ -42,7 +42,7 @@ export const projectData: ProjectCardData[] = [
             "PostgreSQL",
             "BetterAuth"
         ],
-        thumbnail: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=640&h=360&auto=format&fit=crop",
+        thumbnail: "/projects-images/abodewave.png",
         thumbnailAlt: "Adobewave Image"
     },
     {
@@ -79,6 +79,26 @@ export const projectData: ProjectCardData[] = [
             "ChromaDB",
             "Ollama",
             "OpenAI",
+        ],
+        thumbnail: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=640&h=360&auto=format&fit=crop",
+        thumbnailAlt: "DescAI Image"
+    },
+    {
+        id: "5",
+        title: "Circles",
+        subtitle: "Social media app for communities",
+        excerpt: [
+            "Developed a LLM RAG-based Chatbot that scraped, processed, and generated an AI model based on data retrieved from a collection of websites.",
+            "Used it on websites with convoluted and hidden layouts to obtain data based on my requirements."
+        ],
+        createdAt: "August 09, 2024",
+        url: "https://github.com/mehulsinha73/DescAI",
+        urlLabel: "View Github",
+        techStack: [
+            "React Native",
+            "Expo",
+            "TypeScript",
+            "Django",
         ],
         thumbnail: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=640&h=360&auto=format&fit=crop",
         thumbnailAlt: "DescAI Image"

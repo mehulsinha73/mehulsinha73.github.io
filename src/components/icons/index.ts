@@ -1,0 +1,6 @@
+export { GithubIcon } from "./github"
+export { LinkedinIcon } from "./linkedin"    
+export { MailIcon } from "./mail"
+export { SunIcon } from "./sun"
+export { MoonIcon } from "./moon"
+export { MonitorCheckIcon } from "./monitor-check"

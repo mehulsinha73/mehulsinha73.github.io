@@ -1,4 +1,4 @@
-import { Syncopate, Kode_Mono, Almendra, IBM_Plex_Mono } from "next/font/google";
+import { Syncopate, Kode_Mono, IBM_Plex_Mono, Electrolize } from "next/font/google";
 
 export const ibmPlexMono = IBM_Plex_Mono({
     variable: "--font-ibm-plex-mono",
@@ -18,8 +18,8 @@ export const kodeMono = Kode_Mono({
     weight: ["400"]
 });
 
-export const almendra = Almendra({
-    variable: "--font-almendra",
+export const electrolize = Electrolize({
+    variable: "--font-electrolize",
     subsets: ["latin"],
     weight: ["400"]
 });

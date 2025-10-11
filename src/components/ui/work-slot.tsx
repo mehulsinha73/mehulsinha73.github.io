@@ -2,7 +2,7 @@
 
 import Image from "next/image";
 import React from "react";
-import { AnimateUpIntoView, MotionDivProps } from "@/components/animations/animate-up-into-view";
+import { AnimateUpIntoView } from "@/components/animations";
 
 type WorkSlotData = {
     id: string;
@@ -13,7 +13,7 @@ type WorkSlotData = {
     timeframe: string;
 };
 
-type WorkSlotProps = MotionDivProps & {
+type WorkSlotProps = {
     workSlotData: WorkSlotData;
 };
 

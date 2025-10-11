@@ -1,5 +1,4 @@
-import { AnimateStagger } from '@/components/animations/animate-stagger'
-import { AnimateUpIntoView } from '@/components/animations/animate-up-into-view'
+import { AnimateStagger, AnimateUpIntoView } from '@/components/animations'
 import SnakeGame from '@/components/layout/snake'
 
 export default function NotFound() {

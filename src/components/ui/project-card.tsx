@@ -10,7 +10,7 @@ import {
     MorphingDialogContainer,
 } from '@/components/animations/morphing-dialog';
 import { PlusIcon } from 'lucide-react';
-import { AnimateUpIntoView } from '@/components/animations/animate-up-into-view';
+import { AnimateUpIntoView } from '@/components/animations';
 import Link from 'next/link';
 import { ibmPlexMono } from '@/styles/fonts';
 import { cn } from '@/lib/utils';
