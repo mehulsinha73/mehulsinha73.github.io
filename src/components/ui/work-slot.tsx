@@ -44,7 +44,7 @@ function WorkSlot(props: WorkSlotProps) {
                             </p>
                         </div>
                     </div>
-                    <p className="flex justify-between items-end text-nowrap">
+                    <p className="flex justify-between items-end text-sm">
                         {workSlotData.timeframe}
                     </p>
                 </div>

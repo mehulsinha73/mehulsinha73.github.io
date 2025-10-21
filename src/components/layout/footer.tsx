@@ -15,9 +15,9 @@ export default function Footer() {
             <div className="container mx-auto flex h-30 items-center justify-between">
                 <TextEffect
                     as="p"
-                    preset="fade"
+                    preset="blur"
                     per="char"
-                    delay={0.4}
+                    delay={0.2}
                     className="text-xs"
                 >
                     {CopyrightString}

@@ -9,7 +9,7 @@ export const projectData: ProjectCardData[] = [
             "A portfolio showcasing my creative and technical skills through innovative design and interactive experiences.",
             "DM me to get my detailed CV."
         ],
-        createdAt: "September 05, 2025",
+        createdAt: "August 27, 2025",
         url: "https://github.com/mehulsinha73/mehulsinha73.github.io",
         urlLabel: "View Github",
         techStack: [
@@ -24,11 +24,29 @@ export const projectData: ProjectCardData[] = [
     },
     {
         id: "2",
+        title: "Circles",
+        subtitle: "Social media app for communities",
+        excerpt: [
+            "A social media app designed to foster community engagement and interaction through the concept of friend/community circles.",
+        ],
+        createdAt: "September 10, 2025",
+        url: "https://github.com/mehulsinha73/Circles",
+        urlLabel: "View Github",
+        techStack: [
+            "React Native",
+            "Expo",
+            "TypeScript",
+            "Django",
+        ],
+        thumbnail: "/projects-images/circle.png",
+        thumbnailAlt: "Circles Image"
+    },
+    {
+        id: "3",
         title: "Abodewave",
         subtitle: "AI Saas to manage rental properties",
         excerpt: [
-            "Little is known about the life of Édouard-Wilfrid Buquet. He was born in France in 1866, but the time and place of his death is unfortunately a mystery.",
-            "Research conducted in the 1970s revealed that he’d designed the “EB 27” double-arm desk lamp in 1925, handcrafting it from nickel-plated brass, aluminium and varnished wood."
+            "A SaaS platform that leverages AI to streamline rental property management, offering features like automated tenant procurement and screening, rent collection, and maintenance scheduling.",
         ],
         createdAt: "June 18, 2025",
         url: "",
@@ -46,7 +64,7 @@ export const projectData: ProjectCardData[] = [
         thumbnailAlt: "Adobewave Image"
     },
     {
-        id: "3",
+        id: "4",
         title: "Andpods",
         subtitle: "Android app for Airpods settings",
         excerpt: [
@@ -63,7 +81,7 @@ export const projectData: ProjectCardData[] = [
         thumbnailAlt: "Andpods Image"
     },
     {
-        id: "4",
+        id: "5",
         title: "DescAI",
         subtitle: "Chatbot to query group of websites",
         excerpt: [
@@ -80,27 +98,7 @@ export const projectData: ProjectCardData[] = [
             "Ollama",
             "OpenAI",
         ],
-        thumbnail: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=640&h=360&auto=format&fit=crop",
-        thumbnailAlt: "DescAI Image"
-    },
-    {
-        id: "5",
-        title: "Circles",
-        subtitle: "Social media app for communities",
-        excerpt: [
-            "Developed a LLM RAG-based Chatbot that scraped, processed, and generated an AI model based on data retrieved from a collection of websites.",
-            "Used it on websites with convoluted and hidden layouts to obtain data based on my requirements."
-        ],
-        createdAt: "August 09, 2024",
-        url: "https://github.com/mehulsinha73/DescAI",
-        urlLabel: "View Github",
-        techStack: [
-            "React Native",
-            "Expo",
-            "TypeScript",
-            "Django",
-        ],
-        thumbnail: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=640&h=360&auto=format&fit=crop",
+        thumbnail: "/projects-images/blank.png",
         thumbnailAlt: "DescAI Image"
     }
 ]

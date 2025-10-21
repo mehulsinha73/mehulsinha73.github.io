@@ -39,6 +39,7 @@ export function ProjectCard(data: ProjectCardData) {
                     type: 'spring',
                     bounce: 0.05,
                     duration: 0.25,
+                    ease: 'easeInOut',
                 }}
             >
                 <MorphingDialogTrigger
@@ -82,11 +83,6 @@ export function ProjectCard(data: ProjectCardData) {
                             </MorphingDialogSubtitle>
                             <MorphingDialogDescription
                                 disableLayoutAnimation
-                                variants={{
-                                    initial: { opacity: 0, scale: 0.8, y: 100 },
-                                    animate: { opacity: 1, scale: 1, y: 0 },
-                                    exit: { opacity: 0, scale: 0.8, y: 100 },
-                                }}
                                 className='space-y-4'
                             >
                                 <div className='mt-2 space-y-2'>
@@ -109,7 +105,7 @@ export function ProjectCard(data: ProjectCardData) {
                                 </ScrollArea>
                                 <div className='flex items-center justify-between mt-3'>
                                     <Link
-                                        className='inline-flex underline'
+                                        className='inline-flex underline underline-offset-4'
                                         href={data.url}
                                         target='_blank'
                                         rel='noopener'
@@ -120,7 +116,7 @@ export function ProjectCard(data: ProjectCardData) {
                                 </div>
                             </MorphingDialogDescription>
                         </div>
-                        <MorphingDialogClose className='' />
+                        <MorphingDialogClose className='text-muted-foreground' />
                     </MorphingDialogContent>
                 </MorphingDialogContainer>
             </MorphingDialog>

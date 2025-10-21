@@ -1,21 +1,33 @@
 import { AnimateStagger, AnimateUpIntoView } from "@/components/animations";
+import { Tooltip, TooltipContent, TooltipTrigger } from "@/components/ui/tooltip";
 
 export default function Home() {
     return (
-        <AnimateStagger>
+        <AnimateStagger className="space-y-5 text-justify">            
             <AnimateUpIntoView>
-                <p className="text-lg pt-30">
-                    Hey there!
-                </p>
-                <br />
                 <p>
-                    I&apos;m Mehul Sinha, a software developer specializing in building exceptional digital experiences.
+                    Hi, I&apos;m
+                    <Tooltip >
+                        <TooltipTrigger asChild>
+                            <b> Mehul.</b>
+                        </TooltipTrigger>
+                        <TooltipContent
+                            className='[&_svg]:invisible bg-muted text-foreground'
+                            side="right"
+                        >
+                            <p className="italic">
+                                meaning: rain or cloud<br />
+                                pronounced: may-huul
+                            </p>
+                        </TooltipContent>
+                    </Tooltip>
                 </p>
-                <br />
+            </AnimateUpIntoView>
+            <AnimateUpIntoView>
                 <p>
                     Welcome to my portfolio!
                 </p>
             </AnimateUpIntoView>
-        </AnimateStagger>
+        </AnimateStagger >
     );
 }

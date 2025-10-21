@@ -9,10 +9,10 @@ import { cn, getSiteUrl } from "@/lib/utils";
 export const metadata: Metadata = {
     title: {
         template: '%s • Mehul Sinha',
-        default: 'Mehul Sinha',
+        default: 'Mehul Sinha • Software Engineer',
     },
     applicationName: "Mehul Sinha",
-    description: "A Full-stack developer ",
+    description: "Personal website of Mehul Sinha, a software engineer based in Bengaluru, India.",
     metadataBase: new URL(getSiteUrl()),
     keywords: ["Mehul Sinha", "Porfolio", "Software Developer", "Software Engineer", "AI"],
     creator: "Mehul Sinha",
@@ -22,7 +22,7 @@ export const metadata: Metadata = {
     },
     openGraph: {
         title: "Mehul Sinha",
-        description: "A Full-stack developer ",
+        description: "Personal website of Mehul Sinha, a software engineer based in Bengaluru, India.",
         url: new URL(getSiteUrl()),
         siteName: 'Mehul Sinha',
         locale: 'en_US',
