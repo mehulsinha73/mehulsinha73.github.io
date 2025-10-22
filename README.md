@@ -26,3 +26,4 @@ pnpm serve
 
 - Implement blogs
 - Use SSG
+- analytics and insights
