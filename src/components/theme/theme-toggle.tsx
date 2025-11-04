@@ -24,7 +24,7 @@ export function ThemeToggle() {
                     bounce: 0.2,
                     duration: 0.3,
                 }}
-                onValueChange={(id) => {
+                onValueChangeAction={(id) => {
                     setTheme(id as string)
                 }}
             >

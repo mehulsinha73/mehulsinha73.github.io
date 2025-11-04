@@ -30,7 +30,7 @@ export const projectData: ProjectCardData[] = [
             "A social media app designed to foster community engagement and interaction through the concept of friend/community circles.",
         ],
         createdAt: "September 10, 2025",
-        url: "https://github.com/mehulsinha73/Circles",
+        url: "https://github.com/mehulsinha73/circle-ui",
         urlLabel: "View Github",
         techStack: [
             "React Native",
@@ -49,7 +49,7 @@ export const projectData: ProjectCardData[] = [
             "A SaaS platform that leverages AI to streamline rental property management, offering features like automated tenant procurement and screening, rent collection, and maintenance scheduling.",
         ],
         createdAt: "June 18, 2025",
-        url: "",
+        url: "https://github.com/mehulsinha73/abodewave-frontend",
         urlLabel: "View Github",
         techStack: [
             "React",

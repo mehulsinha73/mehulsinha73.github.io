@@ -16,6 +16,16 @@ type Velocity = {
     dy: number
 }
 
+type SnakePart = {
+    x: number
+    y: number
+}
+
+type Snake = {
+    head: SnakePart
+    trail: Array<SnakePart>
+}
+
 export default function SnakeGame() {
     // Canvas Settings
     const canvasRef = useRef<HTMLCanvasElement | null>(null)
@@ -35,11 +45,7 @@ export default function SnakeGame() {
     const [highscore, setHighscore] = useState(0)
     const [newHighscore, setNewHighscore] = useState(false)
     const [score, setScore] = useState(0)
-    const [snake, setSnake] = useState<{
-        head: { x: number; y: number }
-        trail: Array<{ x: number; y: number }
-        >
-    }>({
+    const [snake, setSnake] = useState<Snake>({
         head: { x: 12, y: 9 },
         trail: [],
     })
@@ -424,7 +430,7 @@ export default function SnakeGame() {
                     </div>
                 )}
                 <div className="flex items-center justify-center -mt-15">
-                <div className="grid grid-cols-3 gap-2 w-full max-w-[160px] justify-items-center items-center">
+                <div className="grid grid-cols-3 gap-2 w-full max-w-40 justify-items-center items-center">
                     <div /> {/* Empty cell for grid alignment */}
                     <Button
                         onClick={() => handleDirectionChange('UP')}
