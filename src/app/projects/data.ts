@@ -2,7 +2,30 @@ import { ProjectCardData } from "@/components/ui/project-card";
 
 export const projectData: ProjectCardData[] = [
     {
-        id: "1",
+        id: "6",
+        title: "mi·me·mo",
+        subtitle: "a minimal memo app",
+        excerpt: [
+            "A minimal memo making application based on a privacy focused approach of storing/sharing notes.",
+            "Your notes stay with you, in your browser address bar. No accounts or sign-ups.",
+            "Share thse notes with the world without worrying about privacy or censorship.",
+        ],
+        createdAt: "October 24, 2025",
+        url: "https://github.com/mehulsinha73/mimemo",
+        urlLabel: "View Project",
+        techStack: [
+            "React",
+            "Next.js",
+            "TypeScript",
+            "Tailwind CSS",
+            "PostgreSQL",
+            "Drizzle ORM",
+        ],
+        thumbnail: "/projects-images/mimemo.png",
+        thumbnailAlt: "mimemo Image"
+    },
+    {
+        id: "5",
         title: "My Portfolio",
         subtitle: "Yup! This very one!",
         excerpt: [
@@ -23,7 +46,7 @@ export const projectData: ProjectCardData[] = [
         thumbnailAlt: "My Portfolio Image"
     },
     {
-        id: "2",
+        id: "4",
         title: "Circles",
         subtitle: "Social media app for communities",
         excerpt: [
@@ -64,7 +87,7 @@ export const projectData: ProjectCardData[] = [
         thumbnailAlt: "Adobewave Image"
     },
     {
-        id: "4",
+        id: "2",
         title: "Andpods",
         subtitle: "Android app for Airpods settings",
         excerpt: [
@@ -81,7 +104,7 @@ export const projectData: ProjectCardData[] = [
         thumbnailAlt: "Andpods Image"
     },
     {
-        id: "5",
+        id: "1",
         title: "DescAI",
         subtitle: "Chatbot to query group of websites",
         excerpt: [

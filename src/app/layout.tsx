@@ -39,6 +39,10 @@ export const metadata: Metadata = {
             'max-snippet': -1,
         },
     },
+    appleWebApp: {
+        title: "Mehul Sinha",
+        capable: true,
+    },
 };
 
 export default function RootLayout({
