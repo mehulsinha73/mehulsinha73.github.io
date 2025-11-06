@@ -11,7 +11,7 @@ export const projectData: ProjectCardData[] = [
             "Share thse notes with the world without worrying about privacy or censorship.",
         ],
         createdAt: "October 24, 2025",
-        url: "https://github.com/mehulsinha73/mimemo",
+        url: "https://mimemo-ten.vercel.app",
         urlLabel: "View Project",
         techStack: [
             "React",
