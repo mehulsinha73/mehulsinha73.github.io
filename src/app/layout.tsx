@@ -43,6 +43,9 @@ export const metadata: Metadata = {
         title: "Mehul Sinha",
         capable: true,
     },
+    verification: {
+        google: 'wKsQ5_aJCVmsM1mXoAyS4KzUAaP63HGAe_MEBXXtY6o',
+    },
 };
 
 export default function RootLayout({
