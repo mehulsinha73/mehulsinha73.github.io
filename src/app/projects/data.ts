@@ -79,7 +79,7 @@ export const projectData: ProjectCardData[] = [
             "Next.js",
             "TypeScript",
             "Python",
-            "DJango",
+            "Django",
             "PostgreSQL",
             "BetterAuth"
         ],
