@@ -14,7 +14,7 @@ export const metadata: Metadata = {
     applicationName: "Mehul Sinha",
     description: "Personal website of Mehul Sinha, a software engineer based in Bengaluru, India.",
     metadataBase: new URL(getSiteUrl()),
-    keywords: ["Mehul Sinha", "Porfolio", "Software Developer", "Software Engineer", "AI"],
+    keywords: ["Mehul Sinha", "Mehul", "Sinha", "Software Developer", "Software Engineer", "AI", "Porfolio"],
     creator: "Mehul Sinha",
     twitter: {
         title: "Mehul Sinha",
