@@ -5,7 +5,6 @@ import { AnimatedBackground } from "@/components/animations";
 
 export default function Header() {
     const Links = [
-        { name: "About", href: "/about" },
         { name: "Experience", href: "/experience" },
         { name: "Projects", href: "/projects" },
     ];

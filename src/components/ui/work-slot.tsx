@@ -1,7 +1,6 @@
 'use client';
 
 import Image from "next/image";
-import React from "react";
 import { AnimateUpIntoView } from "@/components/animations";
 
 type WorkSlotData = {
@@ -34,6 +33,7 @@ function WorkSlot(props: WorkSlotProps) {
                             height={60}
                             className="aspect-square object-contain rounded text-xs"
                             draggable={false}
+                            loading="eager"
                         />
                         <div className="flex flex-col justify-between items-start">
                             <p>

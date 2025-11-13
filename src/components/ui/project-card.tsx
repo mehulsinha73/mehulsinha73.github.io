@@ -49,6 +49,7 @@ export function ProjectCard(data: ProjectCardData) {
                         src={data.thumbnail}
                         alt={data.thumbnailAlt}
                         className='h-48 w-full object-cover'
+                        
                     />
                     <div className='flex grow flex-row items-end justify-between px-3 py-2'>
                         <div>

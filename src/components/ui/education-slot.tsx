@@ -32,6 +32,7 @@ function EducationSlot(props: EducationSlotProps) {
                         height={60}
                         className="aspect-square object-contain rounded text-xs"
                         draggable={false}
+                        loading="eager"
                     />
                     <div className="flex flex-col justify-between items-start">
                         <p>
