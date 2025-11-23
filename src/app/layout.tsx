@@ -9,7 +9,7 @@ import { cn, getSiteUrl } from "@/lib/utils";
 export const metadata: Metadata = {
     title: {
         template: '%s • Mehul Sinha',
-        default: 'Mehul Sinha • Software Engineer',
+        default: 'Mehul Sinha',
     },
     applicationName: "Mehul Sinha",
     description: "Personal website of Mehul Sinha, a software engineer based in Bengaluru, India.",
