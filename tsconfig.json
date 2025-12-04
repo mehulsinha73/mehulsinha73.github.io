@@ -25,7 +25,10 @@
     "paths": {
       "@/*": [
         "./src/*"
-      ]
+      ],
+      "@/blog/*": [
+        "./content/blog/*"
+      ],
     }
   },
   "include": [

@@ -1,5 +1,5 @@
 import { cn } from "@/lib/utils";
-import { syncopate, electrolize} from "@/styles/fonts";
+import { syncopate} from "@/styles/fonts";
 import Link from "next/link";
 import { AnimatedBackground } from "@/components/animations";
 
@@ -7,12 +7,13 @@ export default function Header() {
     const Links = [
         { name: "Experience", href: "/experience" },
         { name: "Projects", href: "/projects" },
+        { name: "Blog", href: "/blog" },
     ];
 
     return (
-        <header className="container mx-auto flex flex-col items-start justify-center sm:flex-row sm:items-center sm:justify-between h-40">
-            <Link href="/" className={cn("text-5xl text-nowrap pl-1 sm:pl-0", electrolize.className)}>
-                mehul sinha
+        <header className="container mx-auto flex flex-col items-start justify-center sm:flex-row sm:items-center sm:justify-between h-20">
+            <Link href="/" className={cn("text-3xl text-nowrap pl-1 sm:pl-0", syncopate.className)}>
+                Mehul Sinha
             </Link>
             <nav className={cn("flex items-center mt-2 sm:mt-0", syncopate.className)}>
                 <AnimatedBackground
