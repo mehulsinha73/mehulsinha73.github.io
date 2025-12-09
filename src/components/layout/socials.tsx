@@ -21,7 +21,7 @@ export default function SocialLinks() {
         },
         {
             name: "LinkedIn",
-            href: "https://www.linkedin.com/in/mehulsinha73",
+            href: "https://www.linkedin.com/in/sinha-mehul",
             icon: <LinkedinIcon />,
             tooltip: "Connect on LinkedIn"
         },

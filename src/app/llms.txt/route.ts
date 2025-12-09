@@ -1,6 +1,7 @@
 import { getSiteUrl } from "@/lib/utils"
 import { educationSlotData, workSlotData } from "@/app/experience/data"
 import { projectData } from "@/app/projects/data"
+import { getAllPosts } from "@/lib/api"
 
 export const dynamic = 'force-static'
 
@@ -55,6 +56,17 @@ export async function GET() {
             `- ${project.title}: ${project.subtitle}\n` +
             project.excerpt.map(para => `  - ${para}\n`).join("") +
             "\n"
+        ).join("")
+    )
+
+    const blogPosts = await getAllPosts();
+    llmstxt = llmstxt.concat(
+        "\n",
+        "## Blog Posts\n\n",
+    )
+    llmstxt = llmstxt.concat(
+        blogPosts.map(post =>
+            `- [${post.data.title}](${getSiteUrl()}/${post.slug}): ${post.data.description} Tags - [${post.data.tags.map(tag => tag).join(", ")}]\n`
         ).join("")
     )
 

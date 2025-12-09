@@ -17,16 +17,33 @@ export const metadata: Metadata = {
     keywords: ["Mehul Sinha", "Mehul", "Sinha", "Software Developer", "Software Engineer", "AI", "Porfolio"],
     creator: "Mehul Sinha",
     twitter: {
-        title: "Mehul Sinha",
         card: "summary_large_image",
+        title: "Mehul Sinha",
+        description: "Personal website of Mehul Sinha, a software engineer based in Bengaluru, India.",
+        images: [
+            {
+                url: `${getSiteUrl()}/og/${encodeURIComponent("Mehul Sinha")}`,
+                width: 1200,
+                height: 630,
+                alt: "Mehul Sinha",
+            },
+        ],
     },
     openGraph: {
+        type: 'website',
         title: "Mehul Sinha",
         description: "Personal website of Mehul Sinha, a software engineer based in Bengaluru, India.",
         url: new URL(getSiteUrl()),
         siteName: 'Mehul Sinha',
+        images: [
+            {
+                url: `${getSiteUrl()}/og/${encodeURIComponent("Mehul Sinha")}`,
+                width: 1200,
+                height: 630,
+                alt: "Mehul Sinha",
+            },
+        ],
         locale: 'en_US',
-        type: 'website',
     },
     robots: {
         index: true,

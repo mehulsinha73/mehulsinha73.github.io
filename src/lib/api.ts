@@ -8,11 +8,10 @@ import remarkGfm from 'remark-gfm'
 import remarkFlexibleContainers from 'remark-flexible-containers';
 import remarkFlexibleMarkers from "remark-flexible-markers";
 import remarkIns from "remark-ins";
-import rehypeHighlightLines from "rehype-highlight-code-lines";
 import rehypeImageToolkit from "rehype-image-toolkit";
 import rehypeAutolinkHeadings from 'rehype-autolink-headings';
 import rehypeSlug from 'rehype-slug';
-import rehypeHighlight from 'rehype-highlight';
+import rehypeShiki from '@shikijs/rehype'
 
 import { useMDXComponents } from "@/mdx-components";
 import { Frontmatter, Post, Scope } from "@/lib/types";
@@ -24,7 +23,7 @@ export function getBlogSlugs() {
     return fs.readdirSync(blogDirectory);
 }
 
-export async function getPost(slug?: string | null): Promise<Post | null> {
+export async function getPost(slug: string | null): Promise<Post | null> {
     if (!slug || typeof slug !== "string") {
         console.warn("getPost: called with empty or non-string slug", slug);
         return null;
@@ -46,11 +45,15 @@ export async function getPost(slug?: string | null): Promise<Post | null> {
                     remarkFlexibleMarkers,
                 ],
                 rehypePlugins: [
-                    rehypeHighlight,
-                    rehypeHighlightLines,
                     rehypeImageToolkit,
                     rehypeSlug,
                     [rehypeAutolinkHeadings, { behavior: 'wrap' }],
+                    [rehypeShiki, {
+                        themes: {
+                            light: 'github-light',
+                            dark: 'github-dark',
+                        }
+                    }]
                 ]
             },
             parseFrontmatter: true,
@@ -85,7 +88,7 @@ export async function getPost(slug?: string | null): Promise<Post | null> {
 export async function getAllPosts(): Promise<Post[]> {
     const slugs = getBlogSlugs();
     const posts = await Promise.all(slugs.map((slug) => getPost(slug)));
-    const validPosts = posts.filter((p): p is Post => p !== null);
+    const validPosts = posts.filter((p): p is Post => p !== null && p.data.published === true);
     validPosts.sort((a, b) => (new Date(a.data.created) > new Date(b.data.created) ? -1 : 1));
     return validPosts;
 }

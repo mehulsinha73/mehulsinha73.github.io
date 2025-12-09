@@ -1,0 +1,136 @@
+---
+title: Dynamic Open Graph Images with SSG in Next.js
+description: idk.
+created: 11/12/25
+lastModified: 11/12/25
+tags: 
+    - nextjs
+    - mdx
+    - opengraph
+    - static site generation
+published: true
+---
+
+# Introduction
+In this blog post, we will explore how to create dynamic Open Graph (OG) images for
+static sites using Next.js's Static Site Generation (SSG) capabilities. Open
+Graph images are essential for enhancing the appearance of shared links on social media
+platforms. By leveraging SSG, we can generate these images at build time, ensuring
+optimal performance and SEO benefits.
+
+## What are Open Graph Images?
+Open Graph images are metadata that follow the [Open Graph Protocol](https://ogp.me/), 
+enables any web page to become a rich object when shared on social media. They typically 
+include a title, description, and an image that visually represents the content of the page.
+
+## What is Static Site Generation (SSG)?
+Static Site Generation is a method of pre-rendering web pages at build time, resulting
+in static HTML files. This approach improves performance, reduces server load, and
+enhances SEO.
+
+## Why Use SSG for OG Images?
+Using SSG for OG images offers several advantages:
+- **Performance**: Pre-generated images load faster than dynamically generated ones.
+- **SEO Benefits**: Search engines favor static content, improving your site's ranking.
+- **Scalability**: Easily handle a large number of pages without server load.
+
+
+# Implementation
+
+To create dynamic OG images with SSG in Next.js, follow these steps:
+
+## 1. Set Up Your Next.js Project
+Make sure you have a Next.js project set up with the necessary dependencies for MDX and 
+any other libraries you plan to use for styling or content management.
+
+## 2. Create a Dynamic Route
+In your `app` directory, create a folder for your Open Graph images with a dynamic segment,
+like so:
+```plaintext
+/app/og/[slug]/route.tsx
+```
+
+## 3. Implement the OG Image Generation Logic
+In the `[slug]/route.tsx` file, implement the logic to generate OG images based on the slug.
+You can use libraries like `@vercel/og` to create images dynamically. Here's an example:
+
+```tsx title="route.tsx"
+import { ImageResponse } from '@vercel/og';
+
+export async function GET(request: Request, { params }: { params: { slug: string } }) {
+    const { slug } = await params
+    const title = slug
+    const subtitle = title !== 'Mehul Sinha' ? `Mehul Sinha` : ''
+
+    return new ImageResponse(
+        (
+            <div
+                style={{
+                    fontSize: 40,
+                    color: 'black',
+                    width: '100%',
+                    height: '100%',
+                    display: 'flex',
+                    flexDirection: 'column',
+                    alignItems: 'center',
+                    justifyContent: 'center',
+                    backgroundColor: 'white',
+                }}
+                tw='p-4'
+            >
+                <div tw="bg-gray-50 flex rounded-lg p-2">
+                        {subtitle ? (
+                        <div tw="flex flex-row flex-wrap w-full py-12 px-6 items-center justify-between">
+                            <h2 tw="flex flex-col text-4xl font-bold tracking-tight text-gray-900 text-left whitespace-normal break-words max-w-[65%]">
+                                <span>{title}</span>
+                            </h2>
+                            <h2 tw="flex flex-col text-4xl font-bold tracking-tight text-indigo-600 text-right whitespace-normal break-words max-w-[30%]">
+                                <span>{subtitle}</span>
+                            </h2>
+                        </div>
+                    ) : (
+                        <div tw="flex flex-row w-full py-12 px-6 items-center justify-center">
+                            <h2 tw="flex flex-col text-7xl font-bold tracking-tight text-indigo-600 text-center">
+                                <span>{title}</span>
+                            </h2>
+                        </div>
+                    )}
+                </div>
+            </div>
+        ),
+        {
+            width: 1200,
+            height: 630,
+        }
+    );
+}
+```
+
+## 4. Use `generateStaticParams()` for SSG
+To ensure that the OG images are generated at build time, implement the `generateStaticParams()` function in the same file.
+Specify dynamic = 'force-static' to generate statically during build time.
+
+```tsx title="route.tsx"
+import { getAllPosts } from '@/lib/api';
+
+export const dynamic = 'force-static'
+
+export async function generateStaticParams() {
+    const posts = await getAllPosts()
+    const postTitles = posts.map(post => encodeURIComponent(post.data.title))
+
+    return [
+        encodeURIComponent("Mehul Sinha"),
+        encodeURIComponent("Experience"),
+        encodeURIComponent("Projects"),
+        encodeURIComponent("Blog"),
+        ...postTitles
+    ].map(slug => ({ slug }));
+}
+```
+
+# Conclusion
+By using Next.js SSG, you can create dynamic Open Graph images for your static site. 
+This approach not only enhances the visual appeal of your shared links but also 
+improves performance and SEO. Customize the OG image generation logic according 
+to your design preferences and project requirements!

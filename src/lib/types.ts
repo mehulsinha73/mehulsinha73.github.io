@@ -16,8 +16,9 @@ type Frontmatter = {
     title: string;
     description: string;
     created: Date;
-    lastModified?: Date;
+    lastModified: Date;
     tags: string[];
+    published: boolean;
 };
 
 export type { Post, Scope, Frontmatter };

@@ -29,6 +29,9 @@ function buildTocTree(toc: TocItem[]): TocNode[] {
 }
 
 function Toc({ toc }: { toc: TocItem[] }) {
+    if (toc.length === 0) {
+        return null;
+    }
     const tree = buildTocTree(toc);
 
     const renderNodes = (nodes: TocNode[]) => (
@@ -47,7 +50,7 @@ function Toc({ toc }: { toc: TocItem[] }) {
             <nav className="border rounded-md w-full">
                 <CollapsibleTrigger asChild>
                     <Button variant='ghost' className="w-full" >
-                        <span className="text-center text-base">TABLE OF CONTENTS</span>
+                        <span className="text-center text-lg font-mono">TABLE OF CONTENTS</span>
                     </Button>
                 </CollapsibleTrigger>
                 <CollapsibleContent className="p-3 text-sm">

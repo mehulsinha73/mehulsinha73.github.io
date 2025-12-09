@@ -4,7 +4,12 @@ import type { ComponentProps } from "react";
 const headingClasses = "mt-8 mb-3 w-full font-bold";
 
 export function H1(props: ComponentProps<"h1">) {
-    return <h1 {...props} className={cn(headingClasses, "text-2xl")} />;
+    return (
+        <>
+            <h1 {...props} className={cn(headingClasses, "text-2xl mb-1")} />
+            <hr className="mb-3"/>
+        </>
+    );
 }
 
 export function H2(props: ComponentProps<"h2">) {

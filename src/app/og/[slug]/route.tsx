@@ -4,10 +4,16 @@ import { ImageResponse } from 'next/og'
 export const dynamic = 'force-static'
 
 export async function generateStaticParams() {
-
     const posts = await getAllPosts()
     const postTitles = posts.map(post => encodeURIComponent(post.data.title))
-    return ["about", ...postTitles].map(slug => ({ slug }));
+
+    return [
+        encodeURIComponent("Mehul Sinha"),
+        encodeURIComponent("Experience"),
+        encodeURIComponent("Projects"),
+        encodeURIComponent("Blog"),
+        ...postTitles
+    ].map(slug => ({ slug }));
 }
 
 export async function GET(request: Request, { params }: { params: Promise<{ slug: string }> }) {
@@ -15,49 +21,41 @@ export async function GET(request: Request, { params }: { params: Promise<{ slug
     const title = slug
     const subtitle = title !== 'Mehul Sinha' ? `Mehul Sinha` : ''
 
+
     return new ImageResponse(
         (
             <div
                 style={{
-                    height: '100%',
+                    fontSize: 40,
+                    color: 'black',
                     width: '100%',
+                    height: '100%',
                     display: 'flex',
                     flexDirection: 'column',
-                    backgroundColor: '#fff',
-                    // backgroundImage: 'linear-gradient(45deg, #f3f4f6 25%, transparent 25%), linear-gradient(-45deg, #f3f4f6 25%, transparent 25%), linear-gradient(45deg, transparent 75%, #f3f4f6 75%), linear-gradient(-45deg, transparent 75%, #f3f4f6 75%)',
-                    // backgroundSize: '20px 20px',
+                    alignItems: 'center',
+                    justifyContent: 'center',
+                    backgroundColor: 'white',
                 }}
+                tw='p-4'
             >
-                <svg
-                    width="1200"
-                    height="630"
-                    viewBox="0 0 1200 630"
-                    fill="none"
-                    stroke="black"
-                >
-                    <rect x="20" y="20" width="1160" height="590" />
-                </svg>
-                <div style={{
-                    display: 'flex',
-                    alignItems: 'flex-start',
-                    justifyContent: 'flex-start',
-                    fontSize: 50,
-                    position: 'absolute',
-                    top: 40,
-                    left: 40,
-                    bottom: 40,
-                    right: 40,
-                }}>{title}</div>
-                <div style={{
-                    display: 'flex',
-                    alignItems: 'flex-end',
-                    justifyContent: 'flex-end',
-                    fontSize: 50,
-                    position: 'absolute',
-                    bottom: 40,
-                    right: 40,
-
-                }}>{subtitle}</div>
+                <div tw="bg-gray-50 flex rounded-lg p-2">
+                        {subtitle ? (
+                        <div tw="flex flex-row flex-wrap w-full py-12 px-6 items-center justify-between">
+                            <h2 tw="flex flex-col text-4xl font-bold tracking-tight text-gray-900 text-left whitespace-normal wrap-break-word max-w-[65%]">
+                                <span>{title}</span>
+                            </h2>
+                            <h2 tw="flex flex-col text-4xl font-bold tracking-tight text-indigo-600 text-right whitespace-normal wrap-break-word max-w-[30%]">
+                                <span>{subtitle}</span>
+                            </h2>
+                        </div>
+                    ) : (
+                        <div tw="flex flex-row w-full py-12 px-6 items-center justify-center">
+                            <h2 tw="flex flex-col text-7xl font-bold tracking-tight text-indigo-600 text-center">
+                                <span>{title}</span>
+                            </h2>
+                        </div>
+                    )}
+                </div>
             </div>
         ),
         {

@@ -71,13 +71,13 @@ export default async function Page(
     if (!post) notFound()
 
     return (
-        <article className="container wrap-break-word space-y-30 text-justify">
+        <article className="container wrap-break-word space-y-35 text-justify">
             <div className="space-y-5 text-balance">
-                <Link href={'#'}>
-                    <h1 className="text-3xl text-center">
+                <h1 className="text-3xl text-center">
+                    <Link href={'#'}>
                         {post.data.title}
-                    </h1>
-                </Link>
+                    </Link>
+                </h1>
                 <div className="flex justify-between items-center text-muted-foreground ">
                     <p>
                         {post.scope.readingTime}
@@ -92,7 +92,9 @@ export default async function Page(
                 </div>
                 {post.scope.toc && <Toc toc={post.scope.toc} />}
             </div>
-            {post.content}
+            <div>
+                {post.content}
+            </div>
         </article>
     )
 }
