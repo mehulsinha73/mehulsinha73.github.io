@@ -1,5 +1,26 @@
 import type { MDXComponents } from 'mdx/types'
-import { Anchor, BlockQuote, Code, Emphasis, FigureCaption, H1, H2, H3, H4, H5, H6, HorizontalRule, Image, ListItem, OrderedList, Paragraph, Preformatted, Strong, Table, TableBody, TableCell, TableFooter, TableHeader, TableRow, UnorderedList } from '@/components/md';
+import { 
+    Anchor, 
+    BlockQuote, 
+    Code, 
+    Emphasis, 
+    FigureCaption, 
+    H1, H2, H3, H4, H5, H6, 
+    HorizontalRule, 
+    Image, 
+    ListItem, 
+    OrderedList, 
+    UnorderedList,
+    Paragraph, 
+    Preformatted, 
+    Strong, 
+    Table, 
+    TableBody, 
+    TableCell, 
+    TableFooter, 
+    TableHeader, 
+    TableRow,  
+} from '@/components/md';
 
 const components: MDXComponents = {
     h1: (props) => (

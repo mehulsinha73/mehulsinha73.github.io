@@ -35,7 +35,7 @@ export async function generateMetadata(
             siteName: "Mehul Sinha",
             images: [
                 {
-                    url: `${getSiteUrl()}/og/${encodeURIComponent(post.data.title)}`,
+                    url: `${getSiteUrl()}/og/post/${post.slug}`,
                     width: 1200,
                     height: 630,
                     alt: post.data.title,
@@ -49,7 +49,7 @@ export async function generateMetadata(
             description: post.data.description,
             images: [
                 {
-                    url: `${getSiteUrl()}/og/${encodeURIComponent(post.data.title)}`,
+                    url: `${getSiteUrl()}/og/post/${post.slug}`,
                     width: 1200,
                     height: 630,
                     alt: post.data.title,

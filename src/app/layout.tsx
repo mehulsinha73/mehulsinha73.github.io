@@ -22,7 +22,7 @@ export const metadata: Metadata = {
         description: "Personal website of Mehul Sinha, a software engineer based in Bengaluru, India.",
         images: [
             {
-                url: `${getSiteUrl()}/og/${encodeURIComponent("Mehul Sinha")}`,
+                url: `${getSiteUrl()}/og/site/Mehul Sinha`,
                 width: 1200,
                 height: 630,
                 alt: "Mehul Sinha",
@@ -37,7 +37,7 @@ export const metadata: Metadata = {
         siteName: 'Mehul Sinha',
         images: [
             {
-                url: `${getSiteUrl()}/og/${encodeURIComponent("Mehul Sinha")}`,
+                url: `${getSiteUrl()}/og/site/Mehul Sinha`,
                 width: 1200,
                 height: 630,
                 alt: "Mehul Sinha",

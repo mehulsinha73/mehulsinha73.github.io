@@ -1,10 +1,40 @@
 import { AnimatedBackground, AnimateStagger, AnimateUpIntoView } from "@/components/animations";
 import { getAllPosts } from "@/lib/api";
+import { getSiteUrl } from "@/lib/utils";
 import { Metadata } from "next";
 import Link from "next/link";
 
 export const metadata: Metadata = {
-    title: "Blog"
+    title: "Blog",
+    twitter: {
+        card: "summary_large_image",
+        title: "Mehul Sinha",
+        description: "Personal website of Mehul Sinha, a software engineer based in Bengaluru, India.",
+        images: [
+            {
+                url: `${getSiteUrl()}/og/site/Blog`,
+                width: 1200,
+                height: 630,
+                alt: "Mehul Sinha",
+            },
+        ],
+    },
+    openGraph: {
+        type: 'website',
+        title: "Mehul Sinha",
+        description: "Personal website of Mehul Sinha, a software engineer based in Bengaluru, India.",
+        url: `${getSiteUrl()}/blog`,
+        siteName: 'Mehul Sinha',
+        images: [
+            {
+                url: `${getSiteUrl()}/og/site/Blog`,
+                width: 1200,
+                height: 630,
+                alt: "Mehul Sinha",
+            },
+        ],
+        locale: 'en_US',
+    },
 }
 
 export default async function Blog() {
