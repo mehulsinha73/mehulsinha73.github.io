@@ -8,7 +8,7 @@ export const workSlotData: WorkSlotData[] = [
         company: "JPMorgan Chase, Corporate and Investment Bank",
         position: "Software Engineer",
         description: "Part of the Commmercial Card Team, where I designed and developed projects like Recurring Virtual Cards, Secure Email Service, etc.",
-        timeframe: "Jan 2024 - Current",
+        timeframe: "Jan 2024 - Dec 2025",
     },
     {
         id: "2",
@@ -29,6 +29,13 @@ export const workSlotData: WorkSlotData[] = [
 ]
 
 export const educationSlotData: EducationSlotData[] = [
+    {
+        id: "2",
+        icon: "/logo/usc.png",
+        college: "University of Southern California",
+        degree: "Master of Science in Computer Science",
+        timeframe: "2026 - 2028",
+    },
     {
         id: "1",
         icon: "/logo/manipal.png",

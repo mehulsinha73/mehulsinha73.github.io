@@ -12,7 +12,7 @@ export default function Footer() {
             <nav className="items-center absolute sm:top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 flex justify-center">
                 <SocialLinks />
             </nav>
-            <div className="container mx-auto flex h-30 items-center justify-between">
+            <div className="container mx-auto flex h-20 items-center justify-between">
                 <TextEffect
                     as="p"
                     preset="blur"

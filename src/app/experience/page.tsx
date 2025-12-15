@@ -3,9 +3,39 @@ import { educationSlotData, workSlotData } from "./data";
 import { WorkSlot } from "@/components/ui/work-slot";
 import { AnimatedBackground, AnimateStagger, AnimateUpIntoView } from "@/components/animations";
 import { Metadata } from "next";
+import { getSiteUrl } from "@/lib/utils";
 
 export const metadata: Metadata = {
-    title: "Experience"
+    title: "Experience",
+    twitter: {
+        card: "summary_large_image",
+        title: "Mehul Sinha",
+        description: "Personal website of Mehul Sinha, a software engineer based in Bengaluru, India.",
+        images: [
+            {
+                url: `${getSiteUrl()}/og/site/Experience`,
+                width: 1200,
+                height: 630,
+                alt: "Mehul Sinha",
+            },
+        ],
+    },
+    openGraph: {
+        type: 'website',
+        title: "Mehul Sinha",
+        description: "Personal website of Mehul Sinha, a software engineer based in Bengaluru, India.",
+        url: `${getSiteUrl()}/experience`,
+        siteName: 'Mehul Sinha',
+        images: [
+            {
+                url: `${getSiteUrl()}/og/site/Experience`,
+                width: 1200,
+                height: 630,
+                alt: "Mehul Sinha",
+            },
+        ],
+        locale: 'en_US',
+    },
 }
 
 export default function Experience() {
