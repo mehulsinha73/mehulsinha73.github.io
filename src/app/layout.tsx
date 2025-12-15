@@ -83,7 +83,7 @@ export default function RootLayout({
                         <Header />
                         <main
                             className={cn(
-                                "flex-1 sm:py-10 mx-auto container items-center justify-between",
+                                "flex-1 py-10 mx-auto container items-center justify-between",
                                 ibmPlexMono.className
                             )}>
                             {children}

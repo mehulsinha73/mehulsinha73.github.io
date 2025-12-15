@@ -12,10 +12,10 @@ export default function Header() {
 
     return (
         <header className="container mx-auto flex flex-col items-start justify-center sm:flex-row sm:items-center sm:justify-between h-20">
-            <Link href="/" className={cn("text-3xl text-nowrap pl-1 sm:pl-0", syncopate.className)}>
+            <Link href="/" className={cn("text-3xl text-nowrap", syncopate.className)}>
                 Mehul Sinha
             </Link>
-            <nav className={cn("flex items-center mt-2 sm:mt-0", syncopate.className)}>
+            <nav className={cn("flex items-center mt-2 sm:mt-0 -mx-2 sm:mx-0", syncopate.className)}>
                 <AnimatedBackground
                     className='rounded-md bg-muted'
                     transition={{
