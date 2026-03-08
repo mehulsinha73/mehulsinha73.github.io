@@ -94,7 +94,7 @@ export default async function Blog() {
 						</AnimatedBackground>
 					</ul>
 				) : (
-					<div className="text-center text-gray py-6 text-lg opacity-70">
+					<div className="text-center text-gray py-6  opacity-70">
 						Nothing to see here, check back later
 					</div>
 				)}
