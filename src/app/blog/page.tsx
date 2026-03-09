@@ -95,7 +95,7 @@ export default async function Blog() {
 					</ul>
 				) : (
 					<div className="text-center text-gray opacity-70">
-						Nothing to see here, check back later
+						Nothing here right now, check back later!
 					</div>
 				)}
 			</AnimateUpIntoView>
