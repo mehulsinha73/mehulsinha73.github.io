@@ -1,54 +1,50 @@
-'use client';
+"use client";
 
 import Image from "next/image";
 import React from "react";
 import { AnimateUpIntoView } from "@/components/animations";
 
 type EducationSlotData = {
-    id: string;
-    icon: string;
-    college: string;
-    degree: string;
-    timeframe: string;
+	id: string;
+	icon: string;
+	college: string;
+	degree: string;
+	timeframe: string;
 };
 
 type EducationSlotProps = {
-    educationSlotData: EducationSlotData;
+	educationSlotData: EducationSlotData;
 };
 
 function EducationSlot(props: EducationSlotProps) {
-    const {
-        educationSlotData,
-    } = props;
+	const { educationSlotData } = props;
 
-    return (
-        <AnimateUpIntoView>
-            <div className="flex flex-row gap-2 justify-between items-center px-2.5 py-3">
-                <div className="flex flex-row items-center gap-2">
-                    <Image
-                        src={educationSlotData.icon}
-                        alt={educationSlotData.college + " logo"}
-                        width={60}
-                        height={60}
-                        className="aspect-square object-contain rounded text-xs"
-                        draggable={false}
-                        loading="eager"
-                    />
-                    <div className="flex flex-col justify-between items-start">
-                        <p>
-                            {educationSlotData.college}
-                        </p>
-                        <p className="text-muted-foreground text-sm">
-                            {educationSlotData.degree}
-                        </p>
-                    </div>
-                </div>
-                <p className="flex justify-between items-end">
-                    {educationSlotData.timeframe}
-                </p>
-            </div>
-        </AnimateUpIntoView>
-    );
+	return (
+		<AnimateUpIntoView>
+			<div className="flex flex-row gap-2 justify-between items-center px-2.5 py-3">
+				<div className="flex flex-row items-center gap-2">
+					<Image
+						src={educationSlotData.icon}
+						alt={educationSlotData.college + " logo"}
+						width={60}
+						height={60}
+						className="aspect-square object-contain rounded text-xs"
+						draggable={false}
+						loading="eager"
+					/>
+					<div className="flex flex-col justify-between items-start">
+						<p className="text-sm sm:text-base">{educationSlotData.college}</p>
+						<p className="text-muted-foreground text-xs sm:text-sm">
+							{educationSlotData.degree}
+						</p>
+					</div>
+				</div>
+				<p className="flex justify-between items-end text-xs sm:text-sm">
+					{educationSlotData.timeframe}
+				</p>
+			</div>
+		</AnimateUpIntoView>
+	);
 }
 
 EducationSlot.displayName = "EducationSlot";

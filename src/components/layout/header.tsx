@@ -1,42 +1,53 @@
 import { cn } from "@/lib/utils";
-import { syncopate} from "@/styles/fonts";
+import { syncopate } from "@/styles/fonts";
 import Link from "next/link";
 import { AnimatedBackground } from "@/components/animations";
 
 export default function Header() {
-    const Links = [
-        { name: "Experience", href: "/experience" },
-        { name: "Projects", href: "/projects" },
-        { name: "Blog", href: "/blog" },
-    ];
+	const Links = [
+		{ name: "Experience", href: "/experience" },
+		{ name: "Projects", href: "/projects" },
+		{ name: "Blog", href: "/blog" },
+	];
 
-    return (
-        <header className="container mx-auto flex flex-col items-start justify-center sm:flex-row sm:items-center sm:justify-between h-20">
-            <Link href="/" className={cn("text-3xl text-nowrap", syncopate.className)}>
-                Mehul Sinha
-            </Link>
-            <nav className={cn("flex items-center mt-2 sm:mt-0 -mx-2 sm:mx-0", syncopate.className)}>
-                <AnimatedBackground
-                    className='rounded-md bg-muted'
-                    transition={{
-                        type: 'spring',
-                        bounce: 0.2,
-                        duration: 0.3,
-                    }}
-                    enableHover
-                >
-                    {Links.map((link) => (
-                        <Link
-                            key={link.name}
-                            className="text-muted-foreground hover:text-foreground px-2 py-0.5"
-                            href={link.href}
-                            data-id={link.name}
-                        >
-                            {link.name}
-                        </Link>
-                    ))}
-                </AnimatedBackground>
-            </nav>
-        </header>
-    );
+	return (
+		<header className="container mx-auto flex flex-col items-start justify-center sm:flex-row sm:items-center sm:justify-between h-20">
+			<Link
+				href="/"
+				className={cn("text-3xl text-nowrap", syncopate.className)}
+			>
+				<h1>Mehul Sinha</h1>
+			</Link>
+			<nav
+				className={cn(
+					"flex items-center mt-2 sm:mt-0 -mx-2 sm:mx-0",
+					syncopate.className,
+				)}
+			>
+				<ul className="flex items-center">
+					<AnimatedBackground
+						className="rounded-md bg-muted"
+						transition={{
+							type: "spring",
+							bounce: 0.2,
+							duration: 0.3,
+						}}
+						enableHover
+					>
+						{Links.map((link) => (
+							<li
+								key={link.name}
+								data-id={link.name}
+								className="text-muted-foreground hover:text-foreground px-2 py-0.5"
+							>
+								<Link href={link.href}>
+									<h2>{link.name}</h2>
+								</Link>
+							</li>
+						))}
+					</AnimatedBackground>
+				</ul>
+			</nav>
+		</header>
+	);
 }
