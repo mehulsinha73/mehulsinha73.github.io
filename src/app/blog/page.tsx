@@ -50,9 +50,9 @@ export default async function Blog() {
 		<AnimateStagger>
 			<AnimateUpIntoView>
 				<div className="pb-7.5 justify-center flex">
-					<p className="text-xl hover:underline-offset-5 hover:underline">
+					<h2 className="text-lg sm:text-xl hover:underline-offset-5 hover:underline">
 						Blog
-					</p>
+					</h2>
 				</div>
 			</AnimateUpIntoView>
 			<AnimateUpIntoView>
@@ -94,8 +94,8 @@ export default async function Blog() {
 						</AnimatedBackground>
 					</ul>
 				) : (
-					<div className="text-center text-gray py-6  opacity-70">
-						Nothing to see here, check back later
+					<div className="text-center text-gray opacity-70">
+						Nothing here right now, check back later!
 					</div>
 				)}
 			</AnimateUpIntoView>
