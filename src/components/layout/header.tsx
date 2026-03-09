@@ -20,7 +20,7 @@ export default function Header() {
 			</Link>
 			<nav
 				className={cn(
-					"flex items-center mt-2 sm:mt-0 -mx-2 sm:mx-0",
+					"flex items-center mt-0.5 sm:mt-0 -mx-2 sm:mx-0",
 					syncopate.className,
 				)}
 			>
