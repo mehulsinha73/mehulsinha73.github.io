@@ -46,7 +46,7 @@ export default function Home() {
             <AnimateUpIntoView>
                 <p>
                     I&apos;m a software engineer specializing in building meaningful and exceptional digital experiences.
-                    I have a wide range of interests spanning full-stack engineering, ai, research, design and music.
+                    I&apos;m passionate about software, ai, research, design and music.
                 </p>
             </AnimateUpIntoView>
             <AnimateUpIntoView>

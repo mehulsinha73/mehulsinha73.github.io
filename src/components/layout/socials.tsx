@@ -50,7 +50,7 @@ export default function SocialLinks() {
                                 <Link
                                     href={link.href}
                                     target="_blank"
-                                    rel='noopener'
+                                    rel="noopener"
                                     aria-label={link.name}
                                 >
                                     {link.icon}
