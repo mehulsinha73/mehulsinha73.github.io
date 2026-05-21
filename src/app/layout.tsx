@@ -22,7 +22,7 @@ export const metadata: Metadata = {
 		"Software Developer",
 		"Software Engineer",
 		"AI",
-		"Porfolio",
+		"Portfolio",
 	],
 	creator: "Mehul Sinha",
 	twitter: {
