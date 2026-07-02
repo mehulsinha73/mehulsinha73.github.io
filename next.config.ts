@@ -16,8 +16,6 @@ const nextConfig: NextConfig = {
     images: {
         unoptimized: true,
     },
-    // Configure pageExtensions to support MDX
-    pageExtensions: ['js', 'jsx', 'md', 'mdx', 'ts', 'tsx'],
 };
 
 export default nextConfig;

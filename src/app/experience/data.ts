@@ -2,6 +2,15 @@ import { EducationSlotData } from "@/components/ui/education-slot";
 import { WorkSlotData } from "@/components/ui/work-slot";
 
 export const workSlotData: WorkSlotData[] = [
+    	{
+		id: "4",
+		icon: "/logo/usc.png",
+		company: "University of Southern California",
+		position: "Software Engineer",
+		description:
+			"Software Engineer at the Robotic Embedded Systems Laboratory working on simulation frameworks for large scale multi-agent scenarios.",
+		timeframe: "Feb 2025 - Current",
+	},
 	{
 		id: "3",
 		icon: "/logo/jpmc.png",

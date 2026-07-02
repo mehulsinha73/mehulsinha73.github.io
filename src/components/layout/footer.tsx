@@ -5,7 +5,7 @@ import { TextEffect } from "@/components/animations";
 import SocialLinks from "@/components/layout/socials";
 
 export default function Footer() {
-	const CopyrightString: string = `© ${new Date().getFullYear().toString()} Mehul Sinha`;
+	const CopyrightString: string = `\u00A9 ${new Date().getFullYear().toString()} Mehul Sinha`;
 
 	return (
 		<footer className={cn("relative mt-15 sm:mt-0", kodeMono.className)}>
@@ -13,15 +13,7 @@ export default function Footer() {
 				<SocialLinks />
 			</nav>
 			<div className="container mx-auto flex h-20 items-center justify-between">
-				<TextEffect
-					as="p"
-					preset="blur"
-					per="char"
-					delay={0.2}
-					className="text-xs"
-				>
-					{CopyrightString}
-				</TextEffect>
+				<p className="text-xs">{CopyrightString}</p>
 				<ThemeToggle />
 			</div>
 		</footer>

@@ -13,7 +13,7 @@ export default function SocialLinks() {
 	const Links = [
 		{
 			name: "Mail",
-			href: "mailto:mehulsinha73@gmail.com",
+			href: "mailto:mehulsinha@outlook.com",
 			icon: <MailIcon />,
 			tooltip: "Send me a mail",
 		},

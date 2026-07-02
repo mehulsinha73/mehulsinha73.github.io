@@ -1,4 +1,3 @@
-import { getAllPosts, getPost } from "@/lib/api";
 import { ImageResponse } from "next/og";
 import { NextRequest } from "next/server";
 
@@ -14,16 +13,9 @@ export async function generateStaticParams() {
 		{ type: "site", slug: "Mehul Sinha" },
 		{ type: "site", slug: "Experience" },
 		{ type: "site", slug: "Projects" },
-		{ type: "site", slug: "Blog" },
 	] satisfies RouteParams[];
 
-	const posts = await getAllPosts();
-	const postParams = posts.map((post) => ({
-		type: "post",
-		slug: post.slug,
-	})) satisfies RouteParams[];
-
-	return [...staticParams, ...postParams].map((param) => ({
+	return [...staticParams].map((param) => ({
 		type: param.type,
 		slug: param.slug,
 	})) satisfies RouteParams[];
@@ -40,19 +32,10 @@ export async function GET(
 	const { type, slug } = await params;
 
 	let title = slug;
-	if (type === "post") {
-		try {
-			const post = await getPost(slug);
-			if (post && post.data && post.data.title) {
-				title = post.data.title;
-			}
-		} catch (err) {
-			// ignore and fall back to slug
-		}
-	} else if (type === "site") {
+    if (type === "site") {
 		try {
 			title = decodeURIComponent(slug);
-		} catch (err) {
+		} catch {
 			// ignore and fall back to slug
 		}
 	}
