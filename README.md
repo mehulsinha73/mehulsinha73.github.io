@@ -21,11 +21,3 @@ And serve the built static files with:
 ```bash
 pnpm serve
 ```
-
-## Future plans
-
-- Implement blogs
-- Use SSG
-- analytics and insights
-- og
-- llms.txt

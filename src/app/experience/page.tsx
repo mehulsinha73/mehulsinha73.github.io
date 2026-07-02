@@ -15,7 +15,7 @@ export const metadata: Metadata = {
 		card: "summary_large_image",
 		title: "Mehul Sinha",
 		description:
-			"Personal website of Mehul Sinha, a software engineer based in Bengaluru, India.",
+			"Personal website of Mehul Sinha, a software engineer based in Los Angeles, CA.",
 		images: [
 			{
 				url: `${getSiteUrl()}/og/site/Experience`,
@@ -29,7 +29,7 @@ export const metadata: Metadata = {
 		type: "website",
 		title: "Mehul Sinha",
 		description:
-			"Personal website of Mehul Sinha, a software engineer based in Bengaluru, India.",
+			"Personal website of Mehul Sinha, a software engineer based in Los Angeles, CA.",
 		url: `${getSiteUrl()}/experience`,
 		siteName: "Mehul Sinha",
 		images: [

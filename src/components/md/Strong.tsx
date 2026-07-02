@@ -1,5 +1,0 @@
-import { ComponentProps } from "react";
-
-export function Strong(props: ComponentProps<"strong">) {
-	return <strong  {...props} className="text-bold" />;
-}

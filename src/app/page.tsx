@@ -13,16 +13,14 @@ export default function Home() {
 				<p>
 					Hi, I&apos;m
 					<Tooltip>
-						<TooltipTrigger asChild>
-							<b> Mehul.</b>
+						<TooltipTrigger>
+							<b>&nbsp;Mehul.</b>
 						</TooltipTrigger>
 						<TooltipContent
 							className="[&_svg]:invisible bg-muted text-foreground"
 							side="right"
 						>
 							<p className="italic">
-								meaning: rain or cloud
-								<br />
 								pronounced: may-huul
 							</p>
 						</TooltipContent>
