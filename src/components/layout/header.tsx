@@ -1,7 +1,4 @@
-import { cn } from "@/lib/utils";
-import { syncopate } from "@/styles/fonts";
 import Link from "next/link";
-import { AnimatedBackground } from "@/components/animations";
 
 export default function Header() {
 	const Links = [
@@ -13,38 +10,22 @@ export default function Header() {
 		<header className="container mx-auto flex flex-col items-start justify-center sm:flex-row sm:items-center sm:justify-between h-20">
 			<Link
 				href="/"
-				className={cn("text-3xl text-nowrap", syncopate.className)}
+				className="text-2xl font-semibold text-nowrap"
 			>
 				<h1>Mehul Sinha</h1>
 			</Link>
-			<nav
-				className={cn(
-					"flex items-center mt-0.5 sm:mt-0 -mx-2 sm:mx-0",
-					syncopate.className,
-				)}
-			>
+			<nav className="flex items-center mt-0.5 sm:mt-0 -mx-2 sm:mx-0">
 				<ul className="flex items-center">
-					<AnimatedBackground
-						className="rounded-md bg-muted"
-						transition={{
-							type: "spring",
-							bounce: 0.2,
-							duration: 0.3,
-						}}
-						enableHover
-					>
-						{Links.map((link) => (
-							<li
-								key={link.name}
-								data-id={link.name}
-								className="text-muted-foreground hover:text-foreground px-2 py-0.5"
+					{Links.map((link) => (
+						<li key={link.name}>
+							<Link
+								href={link.href}
+								className="block rounded-md px-2 py-0.5 text-muted-foreground transition-colors hover:bg-muted hover:text-foreground"
 							>
-								<Link href={link.href}>
-									<h2>{link.name}</h2>
-								</Link>
-							</li>
-						))}
-					</AnimatedBackground>
+								{link.name}
+							</Link>
+						</li>
+					))}
 				</ul>
 			</nav>
 		</header>

@@ -8,10 +8,10 @@ import Link from "next/link";
 
 export default function Home() {
 	return (
-		<AnimateStagger className="space-y-5 text-justify text-sm sm:text-base">
+		<AnimateStagger className="space-y-5 text-left text-sm sm:text-base">
 			<AnimateUpIntoView>
 				<p>
-					Hi, I&apos;m
+					Hey, I&apos;m
 					<Tooltip>
 						<TooltipTrigger>
 							<b>&nbsp;Mehul.</b>

@@ -1,14 +1,11 @@
 import { ThemeToggle } from "@/components/theme/theme-toggle";
-import { cn } from "@/lib/utils";
-import { kodeMono } from "@/styles/fonts";
-import { TextEffect } from "@/components/animations";
 import SocialLinks from "@/components/layout/socials";
 
 export default function Footer() {
 	const CopyrightString: string = `\u00A9 ${new Date().getFullYear().toString()} Mehul Sinha`;
 
 	return (
-		<footer className={cn("relative mt-15 sm:mt-0", kodeMono.className)}>
+		<footer className="relative mt-15 sm:mt-0">
 			<nav className="items-center absolute sm:top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 flex justify-center">
 				<SocialLinks />
 			</nav>

@@ -9,7 +9,7 @@ export const workSlotData: WorkSlotData[] = [
 		position: "Software Engineer",
 		description:
 			"Software Engineer at the Robotic Embedded Systems Laboratory working on simulation frameworks for large scale multi-agent scenarios.",
-		timeframe: "Feb 2025 - Current",
+		timeframe: "Feb 2026 - Current",
 	},
 	{
 		id: "3",
@@ -17,7 +17,7 @@ export const workSlotData: WorkSlotData[] = [
 		company: "JPMorgan Chase, Corporate and Investment Bank",
 		position: "Software Engineer",
 		description:
-			"Part of the Commmercial Card Team, where I designed and developed projects like Recurring Virtual Cards, Secure Email Service, etc.",
+			"Part of the Commercial Card Team, where I designed and developed projects like Recurring Virtual Cards, Secure Email Service, etc.",
 		timeframe: "Jan 2024 - Dec 2025",
 	},
 	{

@@ -8,9 +8,9 @@ import {
 	MorphingDialogClose,
 	MorphingDialogDescription,
 	MorphingDialogContainer,
-} from "@/components/animations/morphing-dialog";
+    AnimateUpIntoView
+} from "@/components/animations";
 import { PlusIcon } from "lucide-react";
-import { AnimateUpIntoView } from "@/components/animations";
 import Link from "next/link";
 import { ibmPlexMono } from "@/styles/fonts";
 import { cn } from "@/lib/utils";
@@ -70,7 +70,7 @@ export function ProjectCard(data: ProjectCardData) {
 					<MorphingDialogContent
 						className={cn(
 							"pointer-events-auto relative rounded-xl flex h-auto w-full flex-col",
-							"overflow-hidden border bg-sidebar sm:w-[500px]",
+							"overflow-hidden border bg-sidebar sm:w-125",
 							ibmPlexMono.className,
 						)}
 					>
