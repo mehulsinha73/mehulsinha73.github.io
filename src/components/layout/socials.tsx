@@ -7,7 +7,6 @@ import {
 } from "@/components/ui/tooltip";
 import { AnimatedBackground } from "@/components/animations";
 import Link from "next/link";
-import { kodeMono } from "@/styles/fonts";
 
 export default function SocialLinks() {
 	const Links = [
@@ -63,7 +62,7 @@ export default function SocialLinks() {
 								</Button>
 							</TooltipTrigger>
 							<TooltipContent className="[&_svg]:invisible bg-muted text-foreground">
-								<p className={kodeMono.className}>{link.tooltip}</p>
+								<p>{link.tooltip}</p>
 							</TooltipContent>
 						</Tooltip>
 					</li>

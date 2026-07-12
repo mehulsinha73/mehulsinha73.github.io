@@ -15,16 +15,11 @@ export const metadata: Metadata = {
 	description:
 		"Personal website of Mehul Sinha, a software engineer based in Los Angeles, CA.",
 	metadataBase: new URL(getSiteUrl()),
-	keywords: [
-		"Mehul Sinha",
-		"Mehul",
-		"Sinha",
-		"Software Developer",
-		"Software Engineer",
-		"AI",
-		"Portfolio",
-	],
+	alternates: {
+		canonical: "/",
+	},
 	creator: "Mehul Sinha",
+	authors: [{ name: "Mehul Sinha", url: getSiteUrl() }],
 	twitter: {
 		card: "summary_large_image",
 		title: "Mehul Sinha",
@@ -76,6 +71,43 @@ export const metadata: Metadata = {
 	},
 };
 
+const personJsonLd = {
+	"@context": "https://schema.org",
+	"@type": "Person",
+	name: "Mehul Sinha",
+	givenName: "Mehul",
+	familyName: "Sinha",
+	url: getSiteUrl(),
+	jobTitle: "Software Engineer",
+    description: "Personal website of Mehul Sinha, a software engineer based in Los Angeles, CA.",
+	gender: "Male",
+	knowsAbout: [
+		"Software Engineering",
+		"Artificial Intelligence",
+		"Machine Learning",
+	],
+	address: {
+		"@type": "PostalAddress",
+		addressLocality: "Los Angeles",
+		addressRegion: "CA",
+		addressCountry: "USA",
+	},
+	alumniOf: [
+		{
+			"@type": "CollegeOrUniversity",
+			name: "University of Southern California",
+		},
+		{
+			"@type": "CollegeOrUniversity",
+			name: "Manipal University",
+		},
+	],
+	sameAs: [
+		"https://www.github.com/mehulsinha73",
+		"https://www.linkedin.com/in/mehulsinha73",
+	],
+};
+
 export default function RootLayout({
 	children,
 }: Readonly<{
@@ -83,7 +115,11 @@ export default function RootLayout({
 }>) {
 	return (
 		<html lang="en" suppressHydrationWarning>
-			<body className="antialiased">
+			<body className={cn("antialiased", ibmPlexMono.className)}>
+				<script
+					type="application/ld+json"
+					dangerouslySetInnerHTML={{ __html: JSON.stringify(personJsonLd) }}
+				/>
 				<ThemeProvider
 					attribute="class"
 					defaultTheme="system"
@@ -92,12 +128,7 @@ export default function RootLayout({
 				>
 					<div className="container mx-auto max-w-3xl px-5 flex flex-col min-h-screen">
 						<Header />
-						<main
-							className={cn(
-								"flex-1 py-10 mx-auto container items-center justify-between",
-								ibmPlexMono.className,
-							)}
-						>
+						<main className="flex-1 py-10 mx-auto container items-center justify-between">
 							{children}
 						</main>
 						<Footer />

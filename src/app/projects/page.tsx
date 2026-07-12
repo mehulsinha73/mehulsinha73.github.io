@@ -4,27 +4,32 @@ import { ProjectCard } from "@/components/ui/project-card";
 import { getSiteUrl } from "@/lib/utils";
 import { Metadata } from "next";
 
+const description =
+	"Projects by Mehul Sinha — web apps, mobile apps, and AI/ML tools including mi·me·mo, Circles, Abodewave, and DescAI.";
+
 export const metadata: Metadata = {
 	title: "Projects",
+	description,
+	alternates: {
+		canonical: "/projects",
+	},
 	twitter: {
 		card: "summary_large_image",
-		title: "Mehul Sinha",
-		description:
-			"Personal website of Mehul Sinha, a software engineer based in Los Angeles, CA.",
+		title: "Projects • Mehul Sinha",
+		description,
 		images: [
 			{
 				url: `${getSiteUrl()}/og/site/Projects`,
 				width: 1200,
 				height: 630,
-				alt: "Mehul Sinha",
+				alt: "Projects • Mehul Sinha",
 			},
 		],
 	},
 	openGraph: {
 		type: "website",
-		title: "Mehul Sinha",
-		description:
-			"Personal website of Mehul Sinha, a software engineer based in Los Angeles, CA.",
+		title: "Projects • Mehul Sinha",
+		description,
 		url: `${getSiteUrl()}/projects`,
 		siteName: "Mehul Sinha",
 		images: [
@@ -32,7 +37,7 @@ export const metadata: Metadata = {
 				url: `${getSiteUrl()}/og/site/Projects`,
 				width: 1200,
 				height: 630,
-				alt: "Mehul Sinha",
+				alt: "Projects • Mehul Sinha",
 			},
 		],
 		locale: "en_US",
@@ -43,11 +48,7 @@ export default function Projects() {
 	return (
 		<AnimateStagger>
 			<AnimateUpIntoView>
-				<div className="pb-7.5 justify-center flex">
-					<h2 className="text-lg sm:text-xl hover:underline-offset-5 hover:underline">
-						Projects
-					</h2>
-				</div>
+				<h2 className="pb-7.5 justify-center flex text-lg sm:text-xl font-semibold">Projects</h2>
 			</AnimateUpIntoView>
 			<div className="grid grid-cols-1 md:grid-cols-2 gap-y-10 justify-items-center">
 				{projectData.map((project) => (

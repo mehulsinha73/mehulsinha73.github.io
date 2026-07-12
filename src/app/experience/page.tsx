@@ -1,35 +1,36 @@
 import { EducationSlot } from "@/components/ui/education-slot";
 import { educationSlotData, workSlotData } from "./data";
 import { WorkSlot } from "@/components/ui/work-slot";
-import {
-	AnimatedBackground,
-	AnimateStagger,
-	AnimateUpIntoView,
-} from "@/components/animations";
+import { AnimateStagger, AnimateUpIntoView } from "@/components/animations";
 import { Metadata } from "next";
 import { getSiteUrl } from "@/lib/utils";
 
+const description =
+	"Work experience and education of Mehul Sinha — MS Computer Science at University of Southern California, previously at JPMorgan Chase.";
+
 export const metadata: Metadata = {
 	title: "Experience",
+	description,
+	alternates: {
+		canonical: "/experience",
+	},
 	twitter: {
 		card: "summary_large_image",
-		title: "Mehul Sinha",
-		description:
-			"Personal website of Mehul Sinha, a software engineer based in Los Angeles, CA.",
+		title: "Experience • Mehul Sinha",
+		description,
 		images: [
 			{
 				url: `${getSiteUrl()}/og/site/Experience`,
 				width: 1200,
 				height: 630,
-				alt: "Mehul Sinha",
+				alt: "Experience • Mehul Sinha",
 			},
 		],
 	},
 	openGraph: {
 		type: "website",
-		title: "Mehul Sinha",
-		description:
-			"Personal website of Mehul Sinha, a software engineer based in Los Angeles, CA.",
+		title: "Experience • Mehul Sinha",
+		description,
 		url: `${getSiteUrl()}/experience`,
 		siteName: "Mehul Sinha",
 		images: [
@@ -37,7 +38,7 @@ export const metadata: Metadata = {
 				url: `${getSiteUrl()}/og/site/Experience`,
 				width: 1200,
 				height: 630,
-				alt: "Mehul Sinha",
+				alt: "Experience • Mehul Sinha",
 			},
 		],
 		locale: "en_US",
@@ -48,49 +49,23 @@ export default function Experience() {
 	return (
 		<AnimateStagger>
 			<AnimateUpIntoView>
-				<div className="pb-3 justify-center flex">
-					<h2 className="text-lg sm:text-xl hover:underline-offset-5 hover:underline">
-						Work
-					</h2>
-				</div>
+				<h2 className="pb-3 justify-center flex text-lg sm:text-xl font-semibold">Work</h2>
 			</AnimateUpIntoView>
-			<AnimatedBackground
-				enableHover
-				className="rounded-md bg-sidebar"
-				transition={{
-					type: "spring",
-					bounce: 0,
-					duration: 0.2,
-				}}
-			>
+			<div className="flex flex-col">
 				{workSlotData.map((data) => (
-					<div key={data.id} data-id={data.id} className="flex flex-col">
-						<WorkSlot key={data.id} workSlotData={data} />
-					</div>
+					<WorkSlot key={data.id} workSlotData={data} />
 				))}
-			</AnimatedBackground>
+			</div>
 			<AnimateUpIntoView>
-				<div className="pb-3 pt-7 justify-center flex">
-					<h2 className="text-lg sm:text-xl hover:underline-offset-5 hover:underline">
-						Education
-					</h2>
-				</div>
+				<h2 className="pb-3 pt-7 justify-center flex text-lg sm:text-xl font-semibold">
+					Education
+				</h2>
 			</AnimateUpIntoView>
-			<AnimatedBackground
-				enableHover
-				className="rounded-md bg-sidebar"
-				transition={{
-					type: "spring",
-					bounce: 0,
-					duration: 0.2,
-				}}
-			>
+			<div className="flex flex-col">
 				{educationSlotData.map((data) => (
-					<div key={data.id} data-id={data.id} className="flex flex-col">
-						<EducationSlot educationSlotData={data} />
-					</div>
+					<EducationSlot key={data.id} educationSlotData={data} />
 				))}
-			</AnimatedBackground>
+			</div>
 		</AnimateStagger>
 	);
 }

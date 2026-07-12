@@ -8,7 +8,7 @@ export const projectData: ProjectCardData[] = [
 		excerpt: [
 			"A minimal memo making application based on a privacy focused approach of storing/sharing notes.",
 			"Your notes stay with you, in your browser address bar. No accounts or sign-ups.",
-			"Share thse notes with the world without worrying about privacy or censorship.",
+			"Share these notes with the world without worrying about privacy or censorship.",
 		],
 		createdAt: "October 24, 2025",
 		url: "https://mimemo-ten.vercel.app",
@@ -22,7 +22,7 @@ export const projectData: ProjectCardData[] = [
 			"Drizzle ORM",
 		],
 		thumbnail: "/projects-images/mimemo.png",
-		thumbnailAlt: "mimemo Image",
+		thumbnailAlt: "Screenshot of the mi·me·mo memo editor",
 	},
 	{
 		id: "5",
@@ -43,7 +43,7 @@ export const projectData: ProjectCardData[] = [
 			"Framer Motion",
 		],
 		thumbnail: "/projects-images/portfolio.png",
-		thumbnailAlt: "My Portfolio Image",
+		thumbnailAlt: "Screenshot of Mehul Sinha's portfolio home page",
 	},
 	{
 		id: "4",
@@ -57,7 +57,7 @@ export const projectData: ProjectCardData[] = [
 		urlLabel: "View Github",
 		techStack: ["React Native", "Expo", "TypeScript", "Django"],
 		thumbnail: "/projects-images/circle.png",
-		thumbnailAlt: "Circles Image",
+		thumbnailAlt: "Screenshot of the Circles social media app",
 	},
 	{
 		id: "3",
@@ -79,7 +79,7 @@ export const projectData: ProjectCardData[] = [
 			"BetterAuth",
 		],
 		thumbnail: "/projects-images/abodewave.png",
-		thumbnailAlt: "Adobewave Image",
+		thumbnailAlt: "Screenshot of the Abodewave logo",
 	},
 	{
 		id: "2",
@@ -93,7 +93,7 @@ export const projectData: ProjectCardData[] = [
 		urlLabel: "View Github",
 		techStack: ["Kotlin", "Android SDK"],
 		thumbnail: "/projects-images/airpods.jpg",
-		thumbnailAlt: "Andpods Image",
+		thumbnailAlt: "Andpods Image - represented by a pair of Airpods",
 	},
 	{
 		id: "1",
@@ -108,6 +108,6 @@ export const projectData: ProjectCardData[] = [
 		urlLabel: "View Github",
 		techStack: ["Python", "LangChain", "ChromaDB", "Ollama", "OpenAI"],
 		thumbnail: "/projects-images/blank.png",
-		thumbnailAlt: "DescAI Image",
+		thumbnailAlt: "DescAI, a RAG chatbot for querying groups of websites",
 	},
 ];
