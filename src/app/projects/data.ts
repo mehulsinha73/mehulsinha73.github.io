@@ -35,7 +35,7 @@ export const projectData: ProjectCardData[] = [
 			"Share these notes with the world without worrying about privacy or censorship.",
 		],
 		createdAt: "October 24, 2025",
-		url: "https://mimemo-ten.vercel.app",
+		url: "https://mi-me-mo.vercel.app",
 		urlLabel: "View Project",
 		techStack: [
 			"React",
