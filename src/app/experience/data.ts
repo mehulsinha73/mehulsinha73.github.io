@@ -9,7 +9,7 @@ export const workSlotData: WorkSlotData[] = [
 		position: "Software Engineer",
 		description:
 			"Software Engineer at the Robotic Embedded Systems Laboratory working on simulation frameworks for large scale multi-agent scenarios.",
-		timeframe: "Feb 2026 - Current",
+		timeframe: "Feb 2026 - June 2026",
 	},
 	{
 		id: "3",
