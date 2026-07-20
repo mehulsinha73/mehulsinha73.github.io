@@ -21,8 +21,8 @@ export async function GET() {
 		"\n",
 		"## Pages\n\n",
 		`- [Home](${getSiteUrl()}): The home page of Mehul Sinha's portfolio, containing an introduction and current information about him.\n`,
-		`- [Experience](${getSiteUrl()}/experience): Mehul Sinha's Experiences page, which gives his list of professional, research and educational experiences.\n`,
-		`- [Projects](${getSiteUrl()}/projects): Mehul Sinha's Projects page, containing a list of his recent projects.\n`,
+		`- [Experience](${getSiteUrl("/experience")}): Mehul Sinha's Experiences page, which gives his list of professional, research and educational experiences.\n`,
+		`- [Projects](${getSiteUrl("/projects")}): Mehul Sinha's Projects page, containing a list of his recent projects.\n`,
 	);
 
 	llmstxt = llmstxt.concat("\n", "## Work Experience\n\n");

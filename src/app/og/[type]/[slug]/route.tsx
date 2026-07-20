@@ -41,7 +41,7 @@ export async function GET(
 	}
 
 	const isHome = title === "Mehul Sinha";
-	const subtitle = isHome ? "Software Engineer" : "Mehul Sinha";
+	const subtitle = isHome ? "Software Engineer • AI • ML" : "Mehul Sinha";
 
 	return new ImageResponse(
 		<div

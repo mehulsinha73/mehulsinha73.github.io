@@ -20,7 +20,7 @@ export const metadata: Metadata = {
 		description,
 		images: [
 			{
-				url: `${getSiteUrl()}/og/site/Experience`,
+				url: getSiteUrl("/og/site/Experience"),
 				width: 1200,
 				height: 630,
 				alt: "Experience • Mehul Sinha",
@@ -31,11 +31,11 @@ export const metadata: Metadata = {
 		type: "website",
 		title: "Experience • Mehul Sinha",
 		description,
-		url: `${getSiteUrl()}/experience`,
+		url: getSiteUrl("/experience"),
 		siteName: "Mehul Sinha",
 		images: [
 			{
-				url: `${getSiteUrl()}/og/site/Experience`,
+				url: getSiteUrl("/og/site/Experience"),
 				width: 1200,
 				height: 630,
 				alt: "Experience • Mehul Sinha",
