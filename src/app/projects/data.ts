@@ -1,6 +1,30 @@
 import { ProjectCardData } from "@/components/ui/project-card";
 
 export const projectData: ProjectCardData[] = [
+    {
+		id: "7",
+		title: "SWEJobTracker",
+		subtitle: "Job tracking site for SWEs",
+		excerpt: [
+			"SWEJobTracker watches the boards recruiters actually use, and curates the most relevant job postings for you.",
+			"It helps you track your applications, and provides a simple interface to manage your job search.",
+		],
+		createdAt: "July 19, 2026",
+		url: "https://swejob-tracker.vercel.app",
+		urlLabel: "View Project",
+		techStack: [
+			"React",
+			"Next.js",
+			"TypeScript",
+			"Tailwind CSS",
+            "Claude",
+			"PostgreSQL",
+            "Prisma",
+            "BetterAuth",
+		],
+		thumbnail: "/projects-images/swejobtracker.png",
+		thumbnailAlt: "Screenshot of the SWEJobTracker site",
+	},
 	{
 		id: "6",
 		title: "mi·me·mo",
