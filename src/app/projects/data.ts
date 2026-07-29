@@ -10,8 +10,8 @@ export const projectData: ProjectCardData[] = [
 			"It helps you track your applications, and provides a simple interface to manage your job search.",
 		],
 		createdAt: "July 19, 2026",
-		url: "https://swejob-tracker.vercel.app",
-		urlLabel: "View Project",
+		url: "https://github.com/mehulsinha73/swejobtracker",
+		urlLabel: "View Github",
 		techStack: [
 			"React",
 			"Next.js",
