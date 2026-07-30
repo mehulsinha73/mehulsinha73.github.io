@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useEffect, useRef, useCallback } from "react";
+import { useState, useEffect, useRef, useCallback, useSyncExternalStore } from "react";
 import useInterval from '@/hooks/use-interval'
 import { ArrowDown, ArrowLeft, ArrowRight, ArrowUp, Star, Trophy } from 'lucide-react'
 import { Button } from '@/components/ui/button';
@@ -26,23 +26,66 @@ type Snake = {
     trail: Array<SnakePart>
 }
 
-export default function SnakeGame() {
-    // Canvas Settings
-    const canvasRef = useRef<HTMLCanvasElement | null>(null)
-    const canvasWidth = 500
-    const canvasHeight = 380
-    const canvasGridSize = 20
+// Canvas Settings
+const canvasWidth = 500
+const canvasHeight = 380
+const canvasGridSize = 20
 
-    // Game Settings
-    const minGameSpeed = 10
-    const maxGameSpeed = 15
+// Game Settings
+const minGameSpeed = 10
+const maxGameSpeed = 15
+
+/**
+ * Generates a random position for the apple that does not overlap with the snake.
+ * @param {Snake} snake - The current snake, used to avoid overlapping positions.
+ * @returns {Apple} The new apple position.
+ */
+const generateApplePosition = (snake: Snake): Apple => {
+    const x = Math.floor(Math.random() * (canvasWidth / canvasGridSize))
+    const y = Math.floor(Math.random() * (canvasHeight / canvasGridSize))
+
+    // Check if random position interferes with snake head or trail
+    if ((snake.head.x === x && snake.head.y === y) ||
+        snake.trail.some((snakePart) => snakePart.x === x && snakePart.y === y)) {
+        return generateApplePosition(snake)
+    }
+    return { x, y }
+}
+
+// Highscore lives in localStorage, so it's read through an external store to
+// keep it in sync without a mount effect.
+const highscoreStorageKey = 'highscore'
+const highscoreListeners = new Set<() => void>()
+
+const subscribeToHighscore = (onStoreChange: () => void) => {
+    highscoreListeners.add(onStoreChange)
+    return () => {
+        highscoreListeners.delete(onStoreChange)
+    }
+}
+
+const readHighscore = () => {
+    const stored = localStorage.getItem(highscoreStorageKey)
+    return stored ? parseInt(stored) : 0
+}
+
+const writeHighscore = (value: number) => {
+    localStorage.setItem(highscoreStorageKey, value.toString())
+    highscoreListeners.forEach((listener) => listener())
+}
+
+export default function SnakeGame() {
+    const canvasRef = useRef<HTMLCanvasElement | null>(null)
 
     // Game State
-    const [gameDelay, setGameDelay] = useState<number>(1000 / minGameSpeed)
     const [countDown, setCountDown] = useState<number>(4)
     const [running, setRunning] = useState(false)
     const [isLost, setIsLost] = useState(false)
-    const [highscore, setHighscore] = useState(0)
+    const highscore = useSyncExternalStore(
+        subscribeToHighscore,
+        readHighscore,
+        () => 0
+    )
     const [newHighscore, setNewHighscore] = useState(false)
     const [score, setScore] = useState(0)
     const [snake, setSnake] = useState<Snake>({
@@ -63,34 +106,22 @@ export default function SnakeGame() {
     const clearCanvas = (ctx: CanvasRenderingContext2D) =>
         ctx.clearRect(-1, -1, canvasWidth + 2, canvasHeight + 2)
 
-    /**
-     * Generates a random position for the apple that does not overlap with the snake.
-     * @returns {Apple} The new apple position.
-     */
-    const generateApplePosition = (): Apple => {
-        const x = Math.floor(Math.random() * (canvasWidth / canvasGridSize))
-        const y = Math.floor(Math.random() * (canvasHeight / canvasGridSize))
-
-        // Check if random position interferes with snake head or trail
-        if ((snake.head.x === x && snake.head.y === y) ||
-            snake.trail.some((snakePart) => snakePart.x === x && snakePart.y === y)) {
-            return generateApplePosition()
-        }
-        return { x, y }
-    }
+    // Game speed ramps up with the score, capped at maxGameSpeed
+    const gameDelay = 1000 / Math.min(Math.max(score, minGameSpeed), maxGameSpeed)
 
     /**
      * Initializes game state and starts the countdown.
      */
     const startGame = () => {
-        setGameDelay(1000 / minGameSpeed)
-        setIsLost(false)
-        setScore(0)
-        setSnake({
+        const initialSnake: Snake = {
             head: { x: 12, y: 9 },
             trail: [],
-        })
-        setApple(generateApplePosition())
+        }
+
+        setIsLost(false)
+        setScore(0)
+        setSnake(initialSnake)
+        setApple(generateApplePosition(initialSnake))
         setVelocity({ dx: 0, dy: -1 })
         setRunning(true)
         setNewHighscore(false)
@@ -102,8 +133,7 @@ export default function SnakeGame() {
      */
     const gameOver = () => {
         if (score > highscore) {
-            setHighscore(score)
-            localStorage.setItem('highscore', score.toString())
+            writeHighscore(score)
             setNewHighscore(true)
         }
         setIsLost(true)
@@ -244,7 +274,7 @@ export default function SnakeGame() {
         // Check for collision with apple
         if (nextHeadPosition.x === apple.x && nextHeadPosition.y === apple.y) {
             setScore((prevScore) => prevScore + 1)
-            setApple(generateApplePosition())
+            setApple(generateApplePosition(snake))
         }
 
         const updatedSnakeTrail = [...snake.trail, { ...snake.head }]
@@ -333,22 +363,6 @@ export default function SnakeGame() {
         },
         countDown > 0 && countDown < 4 ? 800 : null
     )
-
-    // DidMount Hook for Highscore
-    useEffect(() => {
-        setHighscore(
-            localStorage.getItem('highscore')
-                ? parseInt(localStorage.getItem('highscore')!)
-                : 0
-        )
-    }, [])
-
-    // Score Hook: increase game speed starting at 16
-    useEffect(() => {
-        if (score > minGameSpeed && score <= maxGameSpeed) {
-            setGameDelay(1000 / score)
-        }
-    }, [score])
 
     // Event Listener: Key Presses
     useEffect(() => {

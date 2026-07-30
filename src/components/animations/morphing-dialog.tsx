@@ -8,6 +8,7 @@ import React, {
     useMemo,
     useRef,
     useState,
+    useSyncExternalStore,
 } from "react";
 import {
     motion,
@@ -225,14 +226,19 @@ export type MorphingDialogContainerProps = {
     style?: React.CSSProperties;
 };
 
+// `document` is only available on the client, so the portal is skipped until
+// after hydration.
+const subscribeToNothing = () => () => { };
+const useIsMounted = () =>
+    useSyncExternalStore(
+        subscribeToNothing,
+        () => true,
+        () => false
+    );
+
 function MorphingDialogContainer({ children, className }: MorphingDialogContainerProps) {
     const { isOpen, uniqueId } = useMorphingDialog();
-    const [mounted, setMounted] = useState(false);
-
-    useEffect(() => {
-        setMounted(true);
-        return () => setMounted(false);
-    }, []);
+    const mounted = useIsMounted();
 
     if (!mounted) return null;
 
