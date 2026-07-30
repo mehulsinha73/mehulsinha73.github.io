@@ -5,8 +5,7 @@
 	"scripts": {
 		"dev": "next dev",
 		"build": "next build",
-		"serve": "npx serve@latest out",
-		"start": "next start",
+		"serve": "pnpm dlx serve out",
 		"lint": "eslint"
 	},
 	"dependencies": {

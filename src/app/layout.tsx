@@ -96,10 +96,12 @@ const personJsonLd = {
 		{
 			"@type": "CollegeOrUniversity",
 			name: "University of Southern California",
+            sameAs: "https://www.usc.edu",
 		},
 		{
 			"@type": "CollegeOrUniversity",
 			name: "Manipal University",
+            sameAs: "https://jaipur.manipal.edu",
 		},
 	],
 	sameAs: [

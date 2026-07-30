@@ -1,8 +1,12 @@
 "use client";
 
-import { JSX, ReactNode } from "react";
+import { ReactNode } from "react";
 import { motion, Variants } from "framer-motion";
 import React from "react";
+
+// Element tags framer-motion ships a ready-made motion component for. Using
+// those instead of `motion.create()` keeps the components stable across renders.
+export type MotionTag = keyof React.JSX.IntrinsicElements & keyof typeof motion;
 
 export type PresetType =
     | "fade"
@@ -24,8 +28,8 @@ export type AnimatedGroupProps = {
         item?: Variants;
     };
     preset?: PresetType;
-    as?: React.ElementType;
-    asChild?: React.ElementType;
+    as?: MotionTag;
+    asChild?: MotionTag;
 };
 
 const defaultContainerVariants: Variants = {
@@ -116,14 +120,8 @@ function AnimatedGroup({
     const containerVariants = variants?.container || selectedVariants.container;
     const itemVariants = variants?.item || selectedVariants.item;
 
-    const MotionComponent = React.useMemo(
-        () => motion.create(as as keyof JSX.IntrinsicElements),
-        [as]
-    );
-    const MotionChild = React.useMemo(
-        () => motion.create(asChild as keyof JSX.IntrinsicElements),
-        [asChild]
-    );
+    const MotionComponent = motion[as];
+    const MotionChild = motion[asChild];
 
     return (
         <MotionComponent
